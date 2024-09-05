@@ -8,6 +8,10 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-weight: auto;
+    background-image: url('img/placeholder-image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 img {
     max-width: 100%;
