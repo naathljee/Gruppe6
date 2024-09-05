@@ -40,18 +40,15 @@ main {
 display: flex;
 text-align: center;
 padding-inline: 20%;
+justify-content: center;
 
-}
-
-.contributor-space {
-
-   margin-left: 3%;
-   margin-right: 3%;
 }
 
 @media only screen and (max-width: 768px) {
     .stories {
         flex-direction: column; 
         padding: 10px; 
+    
     }
 }
+
