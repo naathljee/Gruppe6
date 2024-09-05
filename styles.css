@@ -24,11 +24,11 @@ main {
 
 .stories {
     display: flex;
-    gap: 20px; /* Avstand mellom historiene */
+    gap: 20px;
 }
 
 .story {
-    flex: 1; /* Gjør at hver story får lik bredde */
+    flex: 1; 
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -39,25 +39,19 @@ main {
 
 display: flex;
 text-align: center;
-justify-content: center;
+padding-inline: 20%;
 
+}
 
+.contributor-space {
 
+   margin-left: 3%;
+   margin-right: 3%;
 }
 
 @media only screen and (max-width: 768px) {
     .stories {
-        flex-direction: column; /* Stabler historiene vertikalt på små skjermer */
-    }
-}
-
-
-
-
-
-
-@media only screen and (max-width: 800px) {
-    .container {
+        flex-direction: column; 
         padding: 10px; 
     }
 }
