@@ -95,7 +95,142 @@ justify-content: center;
 
 
 
-/*template side*/
+/*story 1 side*/
+
+.container-HistorieLiten1 {
+    width: 100%;
+    max-width: 800px; 
+    min-width: 130px;
+    margin: 0 auto; 
+    padding: 20px;
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #282828;
+    background-image: url('img/placeholder-image-background-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.HistorieLiten1-img {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    max-width: 100%; 
+    height: auto;
+}
+
+.head-HistorieLiten1 { 
+    border-bottom: 4px solid #ddd;
+    padding-bottom: 6%; 
+    padding-top: 4%;
+}
+
+.logoHistorieLiten1-img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+}
+
+
+.HistorieLiten1-main {
+    padding: 20px 0;
+}
+
+
+/* Bilde og tekst story 1 */
+#container-collage {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+#image-collage {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.button-collage {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1;
+    width: 50px; 
+    height: 50px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% auto;
+    transition: all 0.3s ease; 
+}
+
+.button-collage img {
+    max-width: 100%; 
+    max-height: 100%; 
+    border-radius: 50%; 
+}
+
+.button-collage:hover {
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.4),
+    0 0 0 10px rgba(222, 222, 221, 0.6); 
+}
+
+.button-collage:nth-of-type(1) {
+    left: 10px;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.button-collage:nth-of-type(2) {
+    right: 10px;
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+#text-collage {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: #ddd; 
+    border-radius: 5px; 
+}
+
+@media (max-width: 800px) {
+    #container-collage {
+        flex-direction: column;
+        position: static; 
+        align-items: center; 
+    }
+
+    .button-collage {
+        position: static; 
+        width: 40px; 
+        height: 40px;
+        margin-top: 35px;
+        margin-bottom: 3px;
+    }
+
+    #image-collage {
+        margin: 0; 
+    }
+    
+}
+
+
+
+
+
 
 .container-template {
     width: 100%;
@@ -137,32 +272,6 @@ justify-content: center;
 .template-main {
     padding: 20px 0;
 }
-
-
-/* Template1 collageImage */
-.image-collage {
-    display: block; 
-    margin-left: auto;
-    margin-right: auto; 
-    max-width: 100%; 
-    height: auto;
-}
-
-.image-collage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;  /* Make image invisible initially */
-    transition: opacity 1s ease-in-out;  /* Smooth transition */
-}
-
-.image-collage img.active {
-    opacity: 1;  /* Show image when the "active" class is applied */
-}
-
-
-
-
 
 /*Dark Mode*/
 .dark-mode.container-index {
