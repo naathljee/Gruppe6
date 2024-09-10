@@ -284,6 +284,11 @@ justify-content: center;
     background-color: #ddd;
 }
 
+.dark-mode.container-HistorieLiten1 {
+    color: #282828;
+    background-color: #ddd;
+}
+
 #darkModeToggle {
     position: fixed;
     top: 10px;
