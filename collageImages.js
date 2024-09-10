@@ -1,10 +1,10 @@
 const images = [
-  "collageTemplate1-1.jpg",
-  "collageTemplate1-2.jpg",
-  "collageTemplate1-3.jpg",
-  "collageTemplate1-4.jpg",
-  "collageTemplate1-5.jpg"
-];
+    "img/collageTemplate1-1.jpg",
+    "img/collageTemplate1-2.jpg",
+    "img/collageTemplate1-3.jpg",
+    "img/collageTemplate1-4.jpg",
+    "img/collageTemplate1-5.jpg"
+  ];
 
 let currentIndex = 0;
 
