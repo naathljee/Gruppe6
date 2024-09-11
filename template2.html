@@ -16,6 +16,8 @@
         <button id="darkModeToggle"></button>
     </header>
     <main class="HistorieLiten1-main">
+
+        <section>
         <div id="container-collage">
             <button class="button-collage" onclick="changeContent('forrige')">
                 <img src="img/forrige.png" alt="Forrige">
@@ -25,12 +27,42 @@
                 <img src="img/neste.png" alt="Neste">
             </button>
         </div>
-        
-        
-        <p id="text-collage">This is the first image and text.</p> <!--Må være samme som i scriptet lenger ned i "const texts"-->
+        <p id="text-collage">This is the first image and text.</p> <!--Må være samme som den første i arrayen i scriptet lenger ned i "const texts"-->
+    </section>
+
+    <section class="interview-section">
+        <div class="interview-section__image">
+            <img src="img/placeholder-image-dark.png" alt="Interviewer Photo">
+        </div>
+        <div class="interview-section__text">
+            <h2>Interview 1</h2>
+            <p>Interview text goes here. This is where you provide details about the interview and the interviewee.</p>
+        </div>
+    </section>
+    <section class="interview-section-mirrored">
+        <div class="interview-section-mirrored__text">
+            <h2>Interview 2</h2>
+            <p>Interview text goes here. This is where you provide information about the interview or topic.</p>
+        </div>
+        <div class="interview-section-mirrored__image">
+            <img src="img/placeholder-image-dark.png" alt="Interview Image">
+        </div>
+    </section>
+    <section class="interview-section">
+        <div class="interview-section__image">
+            <img src="img/placeholder-image-dark.png" alt="Interviewer Photo">
+        </div>
+        <div class="interview-section__text">
+            <h2>Interview 3</h2>
+            <p>Interview text goes here. This is where you provide details about the interview and the interviewee.</p>
+        </div>
+    </section>
+    
     </main>
     
     <script>
+
+        //script for å endre bilder og tekst med knapper
         const images = ['img/collageTemplate1-1.jpg', 'img/collageTemplate1-2.jpg', 'img/collageTemplate1-3.jpg', 'img/collageTemplate1-4.jpg', 'img/collageTemplate1-5.jpg'];
 const texts = ['This is the first image and text.', 'This is the second image and text.', 'This is the third image and text.', 'This is the fourth image and text.', 'This is the fifth image and text.'];
 let currentIndex = 0;

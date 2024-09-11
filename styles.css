@@ -228,8 +228,124 @@ justify-content: center;
 }
 
 
+/*seksjon for intervjuer*/
+
+.interview-section {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px; 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #282828;
+    color: #ddd;
+}
+
+.interview-section__image {
+    flex: 1; 
+}
+
+.interview-section__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+}
+
+.interview-section__text {
+    flex: 1; 
+    padding: 20px; 
+    text-align: left; 
+}
+
+.interview-section__text h2 {
+    margin-top: 0; 
+    font-size: 1.5em; 
+}
+
+.interview-section__text p {
+    line-height: 1.6; 
+}
+
+@media (max-width: 800px) {
+    .interview-section {
+        flex-direction: column; 
+        text-align: left; 
+    }
+
+    .interview-section__image,
+    .interview-section__text {
+        flex: none; 
+        width: 100%; 
+    }
+
+    .interview-section__image img {
+        max-width: 100%; 
+        height: auto; 
+    }
+}
+
+/*seksjon for intervjuer speilvendt*/
+
+.interview-section-mirrored {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #282828;
+    color: #ddd;
+}
+
+.interview-section-mirrored__text {
+    flex: 1;
+    padding: 20px;
+    text-align: left; 
+}
+
+.interview-section-mirrored__text h2 {
+    margin-top: 0;
+}
+
+.interview-section-mirrored__image {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.interview-section-mirrored__image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    .interview-section-mirrored {
+        flex-direction: column;
+    }
+
+    .interview-section-mirrored__text {
+        order: 2; 
+        text-align: left; 
+    }
+
+    .interview-section-mirrored__image {
+        order: 1; 
+    }
+
+    .interview-section-mirrored__image img {
+        max-width: 100%; 
+        height: auto; 
+    }
+}
 
 
+
+
+
+
+/*Template side*/
 
 
 .container-template {
