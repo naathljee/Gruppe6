@@ -10,14 +10,43 @@
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="DarkMode.js" defer></script>
 </head>
-<body class="container-template">
-    <header class="head-template">
-        <a href="index.html"><img src="img/ERA.png" alt="Placeholder image" class="logotemplates-img "></a>
-        <button id="darkModeToggle"></button>
+<body class="container-xlstory">
+    <header class="head-xlstory">
+        <a href="index.html"><img src="img/ERA.png" alt="Placeholder image" class="xlstory-img "></a>
     </header>
-    <main class="template-main">
+    <main class="xlstory-main">
+
+        <div class="xlstory-startcontent-background-image" id="background-image"></div>
+        <div class="xlstory-startcontent">
+            <h1>Det er lett å være student.</h1>
+        </div>
        
     </main>
+
     
+    <script>
+let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        let header = document.querySelector('.head-xlstory');
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop && st > 150) {
+            header.style.top = '-150px';
+        } else {
+            header.style.top = '0';
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+    });
+
+window.addEventListener('scroll', function() {
+        const backgroundImage = document.getElementById('background-image');
+        if (window.scrollY > 250) {
+            backgroundImage.style.backgroundImage = "url('img/placeholder-image2.png')";
+        } else {
+            backgroundImage.style.backgroundImage = "url('img/placeholder-image.png')";
+        }
+    });
+
+    </script>
+
 </body>
 </html>

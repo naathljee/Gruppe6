@@ -1,3 +1,8 @@
+:root {
+    --eradark: #282828; 
+    --eralight: #ddd;    
+}
+
 /*index side*/
 
 .container-index {
@@ -9,8 +14,8 @@
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    color: #ddd;
-    background-color: #282828;
+    color: var(--eralight);
+    background-color: var(--eradark);
     background-image: url('img/placeholder-image-background-dark.png');
     background-size: cover;
     background-position: center;
@@ -39,8 +44,8 @@
 
 .large-story {
     margin-bottom: 20px;
-    border-bottom: 2px solid #282828;
-    border-top: 2px solid #282828;
+    border-bottom: 2px solid var(--eradark);
+    border-top: 2px solid var(--eradark);
 }
 
 .large-story a {
@@ -64,7 +69,7 @@
 .story {
     flex: 1; 
     padding: 10px;
-    border-bottom: 2px solid #282828;
+    border-bottom: 2px solid var(--eradark);
 }
 
 .story a {
@@ -106,7 +111,7 @@ justify-content: center;
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #282828;
+    background-color: var(--eradark);
     background-image: url('img/placeholder-image-background-dark.png');
     background-size: cover;
     background-position: center;
@@ -122,7 +127,7 @@ justify-content: center;
 }
 
 .head-HistorieLiten1 { 
-    border-bottom: 4px solid #ddd;
+    border-bottom: 4px solid var(--eralight);
     padding-bottom: 6%; 
     padding-top: 4%;
 }
@@ -202,7 +207,7 @@ justify-content: center;
     margin-top: 10px;
     padding: 10px; 
     background-color: rgba(0, 0, 0, 0.5); 
-    color: #ddd; 
+    color: var(--eralight);
     border-radius: 5px; 
 }
 
@@ -238,8 +243,8 @@ justify-content: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #282828;
-    color: #ddd;
+    background-color: var(--eradark);
+    color: var(--eralight)
 }
 
 .interview-section__image {
@@ -295,8 +300,8 @@ justify-content: center;
     max-width: 100%;
     margin: 20px auto;
     padding: 20px;
-    background-color: #282828;
-    color: #ddd;
+    background-color: var(--eradark);
+    color: var(--eralight)
 }
 
 .interview-section-mirrored__text {
@@ -343,6 +348,80 @@ justify-content: center;
 
 
 
+/*Story XL*/ 
+
+
+.container-xlstory {
+    width: 100%;
+    max-width: 800px; 
+    min-width: 130px;
+    margin: 0 auto; 
+    padding: 20px;
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: var(--eradark);
+    background-image: url('img/placeholder-image-background-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.xlstory-img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+}
+
+.head-xlstory {
+    position: fixed;
+    padding-top: 2%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;   
+    max-width: 1200px;  
+    z-index: 1;
+    transition: top 0.3s;
+}
+
+.xlstory-img {
+    min-width: 50px;
+    max-width: 10%;
+    height: auto;
+    display: block;
+}
+
+.xlstory-main {
+    padding: 20px 0;
+}
+
+.xlstory-startcontent-background-image {
+    background-image: url('img/placeholder-image.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: background-image 0.7s ease-in-out;
+}
+
+.xlstory-startcontent {
+    position: relative;
+    z-index: 1;
+    color: var(--eradark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%; 
+    text-align: center; 
+}
+
 
 
 /*Template side*/
@@ -357,7 +436,7 @@ justify-content: center;
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #282828;
+    background-color: var(--eradark);
     background-image: url('img/placeholder-image-background-dark.png');
     background-size: cover;
     background-position: center;
@@ -373,7 +452,7 @@ justify-content: center;
 }
 
 .head-template { 
-    border-bottom: 4px solid #ddd;
+    border-bottom: 4px solid var(--eralight);
     padding-bottom: 6%; 
     padding-top: 4%;
 }
@@ -391,18 +470,18 @@ justify-content: center;
 
 /*Dark Mode*/
 .dark-mode.container-index {
-    color: #282828;
-    background-color: #ddd;
+    color: var(--eradark);
+    background-color: var(--eralight);
 }
 
 .dark-mode.container-template {
-    color: #282828;
-    background-color: #ddd;
+    color: var(--eradark);
+    background-color: var(--eralight);
 }
 
 .dark-mode.container-HistorieLiten1 {
-    color: #282828;
-    background-color: #ddd;
+    color: var(--eradark);
+    background-color: var(--eralight);
 }
 
 #darkModeToggle {
