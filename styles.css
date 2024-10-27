@@ -35,6 +35,7 @@
 .index-img {
     max-width: 100%;
     height: auto;
+    border-radius: 10%;
 }
 
 
@@ -44,8 +45,10 @@
 
 .large-story {
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--eradark);
-    border-top: 2px solid var(--eradark);
+    border-radius: 2%;
+    padding: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 .large-story a {
@@ -59,6 +62,7 @@
     margin-right: auto; 
     max-width: 100%; 
     height: auto;
+
 }
 
 .stories {
@@ -68,8 +72,9 @@
 
 .story {
     flex: 1; 
-    padding: 10px;
-    border-bottom: 2px solid var(--eradark);
+    padding: 25px;
+    border-radius: 2%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .story a {
@@ -87,6 +92,32 @@ padding-inline: 20%;
 justify-content: center;
 
 }
+
+/* Dark Mode */
+.dark-mode.container-index {
+    color: var(--eradark);
+    background-color: var(--eralight);
+}
+
+
+#darkModeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 8vw;
+    height: 8vw;
+    background-color: transparent;
+    background-image: url('img/darkmode-button.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    z-index: 10;
+}
+
+
 
 
 
@@ -112,7 +143,7 @@ justify-content: center;
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--eradark);
-    background-image: url('img/placeholder-image-background-dark.png');
+    /* background-image: url('img/placeholder-image-background-dark.png');*/
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -157,8 +188,11 @@ justify-content: center;
 }
 
 #image-collage {
-    max-width: 100%; 
+    max-width: 95%; 
     height: auto; 
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4%;
 }
 
 .button-collage {
@@ -202,13 +236,24 @@ justify-content: center;
     top: 50%; 
     transform: translateY(-50%); 
 }
-#text-collage {
-    text-align: center;
+
+.text-collage {
+    font-size: larger;
+    text-align: left;
     margin-top: 10px;
-    padding: 10px; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;  
     color: var(--eralight);
     border-radius: 5px; 
+}
+
+.title-collage {
+
+    text-align: center;
+    margin-top: 30px; 
+    color: var(--eralight);
+    border-radius: 5px; 
+    font-size: 250%;
+    
 }
 
 @media (max-width: 800px) {
@@ -236,6 +281,7 @@ justify-content: center;
 /*seksjon for intervjuer*/
 
 .interview-section {
+    width: 92%;
     display: flex;
     flex-direction: row; 
     align-items: center; 
@@ -244,7 +290,9 @@ justify-content: center;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--eradark);
-    color: var(--eralight)
+    color: var(--eralight);
+    border-radius: 25px; 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .interview-section__image {
@@ -293,6 +341,7 @@ justify-content: center;
 /*seksjon for intervjuer speilvendt*/
 
 .interview-section-mirrored {
+    width: 92%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -301,7 +350,9 @@ justify-content: center;
     margin: 20px auto;
     padding: 20px;
     background-color: var(--eradark);
-    color: var(--eralight)
+    color: var(--eralight);
+    border-radius: 25px; 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .interview-section-mirrored__text {
@@ -323,6 +374,43 @@ justify-content: center;
 .interview-section-mirrored__image img {
     max-width: 100%;
     height: auto;
+}
+
+/* Dark Mode */
+.dark-mode.container-HistorieLiten1 {
+    color: var(--eradark);
+    background-color: var(--eralight);
+}
+
+#darkModeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 8vw;
+    height: 8vw;
+    background-color: transparent;
+    background-image: url('img/darkmode-button.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    z-index: 10;
+}
+
+.dark-mode.text-collage {
+    color: var(--eradark);
+   
+}
+
+.dark-mode.title-collage {
+    color: var(--eradark);
+}
+
+.dark-mode.head-HistorieLiten1 { 
+    border-bottom: 4px solid var(--eradark);
+
 }
 
 @media (max-width: 800px) {
@@ -450,6 +538,11 @@ justify-content: center;
     background-color: var(--eralight);
 }
 
+.dark-mode.head-HistorieLiten2 {
+    border-bottom: 4px solid var(--eradark);
+
+}
+
 #darkModeToggle {
     position: fixed;
     top: 10px;
@@ -464,6 +557,7 @@ justify-content: center;
     background-repeat: no-repeat;
     background-position: center;
     border: none;
+    z-index: 10;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -546,6 +640,12 @@ justify-content: center;
     background-color: var(--eralight);
 }
 
+.dark-mode.head-HistorieLiten3 { 
+    border-bottom: 4px solid var(--eradark);
+ 
+}
+
+
 #darkModeToggle {
     position: fixed;
     top: 10px;
@@ -560,6 +660,7 @@ justify-content: center;
     background-repeat: no-repeat; 
     background-position: center;
     border: none; 
+    z-index: 10;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -721,6 +822,7 @@ justify-content: center;
     background-repeat: no-repeat; 
     background-position: center;
     border: none; 
+    z-index: 10;
 }
 
 @media only screen and (min-width: 1000px) {
