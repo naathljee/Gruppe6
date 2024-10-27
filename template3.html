@@ -10,14 +10,69 @@
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="DarkMode.js" defer></script>
 </head>
-<body class="container-template">
-    <header class="head-template">
-        <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logotemplates-img "></a>
+<body class="container-HistorieLiten2">
+    <header class="head-HistorieLiten2">
+        <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logoHistorieLiten1-img"></a>
         <button id="darkModeToggle"></button>
     </header>
-    <main class="template-main">
+    <main class="HistorieLiten2-main">
+        <div class="carousel" id="carousel-container">
 
+            <button class="carousel-button" id="carousel-prev" onclick="changeContent('forrige')">
+                <img src="img/forrige.png" alt="Forrige">
+            </button>
+            <div class="image-container" id="image-container"></div>
+            <button class="carousel-button" id="carousel-next" onclick="changeContent('neste')">
+                <img src="img/neste.png" alt="Neste">
+            </button>
+        
+        </div>
+
+        <div class="text">
+            <p id="carousel-text">Tekst for Bilde 1</p>
+        </div>
     </main>
-    
+    <script>
+ const imageContainer = document.getElementById('image-container');
+const prevButton = document.getElementById('carousel-prev');
+const nextButton = document.getElementById('carousel-next');
+const carouselText = document.getElementById('carousel-text');
+const texts = [
+    'Tekst for Bilde 1', //Denne teksten må være lik teksten i carousel text
+    'Tekst for Bilde 2',
+    'Tekst for Bilde 3',
+    'Tekst for Bilde 4',
+    'Tekst for Bilde 5',
+    'Tekst for Bilde 6'
+];
+let currentIndex = 0;
+const zoomLevels = [
+    {size: '100%', position: 'center'},   
+    {size: '150%', position: '20% 20%'},   
+    {size: '150%', position: '80% 20%'},  
+    {size: '150%', position: '50% 50%'},   
+    {size: '150%', position: '20% 80%'},   
+    {size: '150%', position: '80% 80%'}    
+];
+
+function showImage(index) {
+    imageContainer.style.backgroundSize = zoomLevels[index].size;
+    imageContainer.style.backgroundPosition = zoomLevels[index].position;
+    carouselText.textContent = texts[index];
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : zoomLevels.length - 1;
+    showImage(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < zoomLevels.length - 1) ? currentIndex + 1 : 0;
+    showImage(currentIndex);
+});
+
+showImage(currentIndex);
+
+    </script>
 </body>
 </html>
