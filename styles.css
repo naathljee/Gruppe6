@@ -518,6 +518,7 @@ justify-content: center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    color: var(--eralight);
 }
 
 
@@ -527,7 +528,7 @@ justify-content: center;
     padding-top: 4%;
 }
 
-.logotemplates-img {
+.logoHistorieLiten3-img {
     max-width: 20%;
     height: auto;
     display: block;
@@ -539,15 +540,6 @@ justify-content: center;
 }
 
 /*Dark Mode*/
-.dark-mode.container-index {
-    color: var(--eradark);
-    background-color: var(--eralight);
-}
-
-.dark-mode.container-template {
-    color: var(--eradark);
-    background-color: var(--eralight);
-}
 
 .dark-mode.container-HistorieLiten3 {
     color: var(--eradark);
