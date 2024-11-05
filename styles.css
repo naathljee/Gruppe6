@@ -479,7 +479,7 @@ justify-content: center;
 .image-container {
     width: 100%;
     aspect-ratio: 16 / 9;
-    background-image: url('img/placeholder-image-maps.png');
+    background-image: url('img/maps-story-bilde1.png');
     background-size: cover;
     background-position: center;
     transition: background-position 0.5s ease, background-size 0.5s ease;
