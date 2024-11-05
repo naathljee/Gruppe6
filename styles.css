@@ -436,9 +436,10 @@ justify-content: center;
 
 /*story 2 side*/
 
+
+
 .container-HistorieLiten2 {
     width: 100%;
-    max-width: 800px;
     min-width: 130px;
     margin: 0 auto;
     padding: 20px;
@@ -446,38 +447,78 @@ justify-content: center;
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--eradark);
-    background-image: url('img/placeholder-image-background-dark.png');
+    color: var(--eralight);
+    position: relative; 
+}
+
+.background-HistorieLiten2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/maps-story-bilde1.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: var(--eralight);
+    transition: opacity 0.5s ease; 
+    z-index: -1; 
+    opacity: 1; 
 }
 
+.background-HistorieLiten2.faded::before {
+    opacity: 0; 
+}
+
+
 .head-HistorieLiten2 {
-    border-bottom: 4px solid var(--eralight);
-    padding-bottom: 6%;
-    padding-top: 4%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hide-header {
+    transform: translateY(-100%);
 }
 
 .logoHistorieLiten2-img {
-    max-width: 20%;
+    min-width: 5%;
+    max-width: 12%;
     height: auto;
     display: block;
 }
+
 
 .HistorieLiten2-main {
     padding: 20px 0;
     text-align: center;
 }
 
-.HistorieLiten2-H1 {
+.HistorieLiten2-starttekst {
     display: flex;
-    justify-content: center;
+    font-size: x-large;
+    justify-content: center;  
+    align-items: center;  
+    width: 100%;
+    height: 78vh;  
     text-align: center;
-    align-items: center;
-    width: 100%; 
-    height: 100%;
+    padding: 20px; 
+    box-sizing: border-box; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
+
+
+.HistorieLiten2-ptext {
+    margin-top: 100vh;  
+    font-size: larger;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    text-align: center;
+    width: 100%;
+}
+
+
 
 .carousel {
     display: flex;
@@ -492,8 +533,14 @@ justify-content: center;
     background-image: url('img/maps-story-bilde1.png');
     background-size: cover;
     background-position: center;
-    transition: background-position 0.5s ease, background-size 0.5s ease;
+    transition: background-position 0.5s ease, background-size 0.5s ease, opacity 1s ease; /* Add opacity transition */
+    opacity: 0; /* Initially set opacity to 0 */
+    visibility: hidden; /* Initially hide the container */
+    z-index: -1;
 }
+
+
+
 
 .carousel-button {
     position: absolute;
@@ -537,6 +584,23 @@ justify-content: center;
     transform: translateY(-50%);
 }
 
+.image-container, .text {
+    position: fixed;
+    top: 50%; /* Juster etter behov for å sentrere innholdet vertikalt */
+    left: 50%; /* Juster etter behov for å sentrere innholdet horisontalt */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.text {
+    margin-top: 20px; 
+    color: var(--eralight);
+    padding: 10px;
+    border-radius: 5px;
+}
+
 .text {
     text-align: center;
     margin-top: 10%;
@@ -570,40 +634,6 @@ justify-content: center;
     z-index: 10;
 }
 
-@media only screen and (min-width: 1000px) {
-    #darkModeToggle {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-@media only screen and (max-width: 725px) {
-    #darkModeToggle {
-        width: 57px;
-        height: 57px;
-    }
-}
-
-@media (max-width: 800px) {
-    #carousel-container {
-        flex-direction: column;
-        position: static; 
-        align-items: center; 
-    }
-
-    .carousel-button {
-        position: static; 
-        width: 40px; 
-        height: 40px;
-        margin-top: 35px;
-        margin-bottom: 3px;
-    }
-
-    #image-container {
-        margin: 0; 
-    }
-    
-}
 
 
 /*story 3 side*/
