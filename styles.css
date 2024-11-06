@@ -442,7 +442,6 @@ justify-content: center;
     width: 100%;
     min-width: 130px;
     margin: 0 auto;
-    padding: 20px;
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -481,6 +480,8 @@ justify-content: center;
 }
 
 .logoHistorieLiten2-img {
+    padding-top: 3%;
+    padding-left: 3%;
     min-width: 5%;
     max-width: 12%;
     height: auto;
@@ -529,7 +530,7 @@ justify-content: center;
 
 .image-container {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     background-image: url('img/maps-story-bilde1.png');
     background-size: cover;
     background-position: center;
@@ -586,8 +587,8 @@ justify-content: center;
 
 .image-container, .text {
     position: fixed;
-    top: 50%; /* Juster etter behov for å sentrere innholdet vertikalt */
-    left: 50%; /* Juster etter behov for å sentrere innholdet horisontalt */
+    top: 50%; 
+    left: 50%; 
     transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
@@ -595,16 +596,24 @@ justify-content: center;
 }
 
 .text {
-    margin-top: 20px; 
     color: var(--eralight);
     padding: 10px;
     border-radius: 5px;
-}
-
-.text {
     text-align: center;
     margin-top: 10%;
+    width: 30%;
+    font-size: larger;
+    background-color: #282828;
+    transition: opacity 1s ease-in-out; 
+    opacity: 0; 
+    visibility: hidden; 
 }
+
+.text.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 /* Dark Mode */
 .dark-mode.container-HistorieLiten2 {

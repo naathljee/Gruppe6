@@ -26,12 +26,15 @@
         
         <div class="carousel" id="carousel-container">
             <div class="image-container" id="image-container"></div>
-            <div class="text">
+            <div class="text" id="text">
                 <p id="carousel-text"></p>
             </div>
         </div>
         
         <div style="height: 5000px;"></div>
+    
+        <p>Siden desember 1718 har det vært spekulasjoner rundt hvem som faktisk drepte Kong Karl XII av Sverige.<br> 
+            Var kula som traff han skutt fra et norsk våpen, eller ble han drept av sine egne? </p> 
     
 
     </main>
@@ -70,35 +73,39 @@ window.addEventListener('scroll', () => {
 //Array som skifter zoom og tekst
 const imageContainer = document.getElementById('image-container');
 const carouselText = document.getElementById('carousel-text');
+const text = document.getElementById('text');
 const texts = [
-    '', 
-    'Tekst for Bilde 2',
+    'Fredriksten festning', 
+    'Stutekollen: Karl XII dro svære kanoner opp på Stutekollen og bombarderte Gyldenløve fort i tre dager. Fortet ble knust og ved å bygge løpegraver klarte svenskene å storme fremover. Ifølge kommandant oberstløytnant Magne Rannestad ved Fredriksten festning var det på den lille høyden angrepet startet i 1718.',
     'Tekst for Bilde 3',
     'Tekst for Bilde 4',
-    'Tekst for Bilde 5',
-    'Tekst for Bilde 6'
+    'Tekst for Bilde 5'
 ];
 const zoomLevels = [
-    {size: '100%', position: '50% 50%'},
+    {size: '110%', position: '15% 95%'},
     {size: '250%', position: '1% 1%'},   
     {size: '150%', position: '20% 20%'},   
     {size: '150%', position: '80% 20%'},  
-    {size: '150%', position: '50% 50%'},   
-    {size: '150%', position: '20% 80%'} 
+    {size: '150%', position: '50% 50%'}  
+   
 ];
 
-//Gjør så bildet ikke viser seg før man har scrollet ned 2000px
 function updateContent(index) {
-    if (window.scrollY > 2000) {  
+    if (index >= zoomLevels.length) {
+        index = zoomLevels.length - 1;
+    }
+    if (window.scrollY > 2000 && window.scrollY < 6000) {  
         imageContainer.style.backgroundSize = zoomLevels[index].size;
         imageContainer.style.backgroundPosition = zoomLevels[index].position;
         carouselText.textContent = texts[index];
         imageContainer.style.visibility = 'visible';  
+        text.classList.add('show');  
         imageContainer.style.opacity = '1';  
     } else {
         imageContainer.style.opacity = '0'; 
+        text.classList.remove('show');
         setTimeout(() => {
-            if (window.scrollY <= 2000) {
+            if (window.scrollY <= 2000 || window.scrollY >= 6000) {
                 imageContainer.style.visibility = 'hidden';  
             }
         }, 1000);  
@@ -108,9 +115,9 @@ function updateContent(index) {
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = (scrollPosition - 2000) / (maxScroll - 2000); // Juster scrollfraksjonen etter 2000px
+    const scrollFraction = (scrollPosition - 2000) / (3000); // Juster scrollfraksjonen for å matche 2000-5000 px
     const index = Math.min(
-        Math.max(0, Math.floor(scrollFraction * (zoomLevels.length - 1))), // Sikre at indeksen er mellom 0 og lengden av arrayet
+        Math.max(0, Math.floor(scrollFraction * (zoomLevels.length - 1))), 
         zoomLevels.length - 1
     );
 
@@ -118,6 +125,8 @@ window.addEventListener('scroll', () => {
 });
 
 updateContent(0);
+
+
 
 
     </script>
