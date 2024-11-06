@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
-    <script src="DarkMode.js" defer></script>
+    
 </head>
 <body class="container-HistorieLiten2 background-HistorieLiten2">
     <header class="head-HistorieLiten2">
@@ -20,7 +20,7 @@
         </div>
         <div class="HistorieLiten2-ptext">
             <p>Siden desember 1718 har det vært spekulasjoner rundt hvem som faktisk drepte Kong Karl XII av Sverige.<br>
-            Var kula som traff han skutt fra et norsk våpen, eller ble han drept av sine egne? </p>
+            Var kula som traff han skutt fra et norsk våpen, eller ble han drept av sine egne?</p>
         </div>
         <div class="carousel" id="carousel-container">
             <div class="image-container" id="image-container"></div>
@@ -28,7 +28,12 @@
                 <p id="carousel-text"></p>
             </div>
         </div>
-        <div style="height: 18000px;"></div> <!-- Oppdatert høyde -->
+        <div style="height: 10400px;"></div>
+
+        <div class="HistorieLiten2-endtext">
+            <p> Som vi sier i Halden: <br> Det er ikke så nøye med fasiten. Det som er viktig er å holde liv i kongens død, konkluderer Rannestad.</p>
+        </div>
+        <div style="height: 100px;"></div>
     </main>
     <script>
         //Gjør så ERA logoen forsvinner etter 35 pixler scroling
@@ -69,12 +74,11 @@
             '-Svenskene gravde bare i mørket, og hvis noen hadde skutt mot festningen ville deres posisjon bli avslørt. Samtidig måtte en eventuell snikmorder ha vært svært nær kongen for å treffe i mørket, soldatene ville ha hørt det og kula ville hatt mye større fart. Det var dermed ikke mulig å få til et snikmord.',
             '-Overberget Fort: I 2018 ble hendelsen gjenskapt. Da ble det enda mer tydelig at han ikke ble drept av sine egne. Samtidig påpeker Rannestad at en eventuell konspirasjon blant svenskene ville vært vanskelig å gjennomføre fordi det var så mange av dem. Noen ville ha røpet hemmeligheten.',
             '-Så hva drepte kongen?',
-            '-Mest sannsynlig var det en kanonkule, forklarer Rannestad videre. Små kuler var nemlig pakket i klaser.',
+            '-Mest sannsynlig var det en kanonkule, forklarer Rannestad videre. Små kuler var nemlig pakket i klaser. -Det som styrker teorien er ammunisjonsredskapene ved festningen. Det er dokumentert at det ble brukt 50 tonn av slik ammunisjon.',
             '-Både teoretisk og ved skyteforsøk har de beregnet hastigheten på kula. Deretter har de klart å beregne at kula må ha blitt skutt 600 meter fra kongen. Med den radiusen lander vi på Overberget fort.',
             '-Konklusjonen er derfor at Karl XII ble drept av ei norsk kule.',
             '-Seriøse forskere støtter teorien. Samtidig er det mye sympati for snikmordteorien fordi det var så gode grunner bak. For svenskene var det også nesten myteomspunnet at Karl XII ikke kunne dø, og det måtte noe helt spesielt til for å drepe han.',
-            '-Som vi sier i Halden: Det er ikke så nøye med fasiten. Det som er viktig er å holde liv i kongens død, konkluderer Rannestad.',
-            '-Det som styrker teorien er ammunisjonsredskapene ved festningen. Det er dokumentert at det ble brukt 50 tonn av slik ammunisjon.'
+            '-Som vi sier i Halden: Det er ikke så nøye med fasiten. Det som er viktig er å holde liv i kongens død, konkluderer Rannestad.'
 
  
 
@@ -85,53 +89,54 @@
             {size: '110%', position: '15% 95%'},
             {size: '250%', position: '4% 1%'},
             {size: '250%', position: '2% 40%'},
-            {size: '150%', position: '80% 20%'},
+            {size: '110%', position: '80% 20%'},
             {size: '250%', position: '1% 55%'},
             {size: '250%', position: '82% 44%'},
             {size: '110%', position: '50% 50%'},
             {size: '110%', position: '50% 50%'},
             {size: '250%', position: '82% 44%'},
-            {size: '110%', position: '50% 50%'},
-            {size: '110%', position: '50% 50%'},
-            {size: '110%', position: '50% 50%'},
-            {size: '100%', position: '50% 50%'}
+            {size: '170%', position: '27% 100%'},
+            {size: '170%', position: '27% 100%'},
+            {size: '170%', position: '27% 100%'}
+           
         ];
 
         function updateContent(index) {
-            if (index >= zoomLevels.length) {
-                index = zoomLevels.length - 1;
+    if (index >= zoomLevels.length) {
+        index = zoomLevels.length - 1;
+    }
+    if (window.scrollY > 2000 && window.scrollY < 11000) {  // Justert for å vise innholdet mellom 2000 og 11000 px
+        imageContainer.style.backgroundSize = zoomLevels[index].size;
+        imageContainer.style.backgroundPosition = zoomLevels[index].position;
+        carouselText.textContent = texts[index];
+        imageContainer.style.visibility = 'visible';
+        text.classList.add('show');
+        imageContainer.style.opacity = '1';
+    } else {
+        imageContainer.style.opacity = '0';
+        text.classList.remove('show');
+        setTimeout(() => {
+            if (window.scrollY <= 2000 || window.scrollY >= 11000) {  // Justert for å skjule innholdet før 2000 og etter 11000 px
+                imageContainer.style.visibility = 'hidden';
             }
-            if (window.scrollY > 2000) {  // Viser innholdet etter 2000 px
-                imageContainer.style.backgroundSize = zoomLevels[index].size;
-                imageContainer.style.backgroundPosition = zoomLevels[index].position;
-                carouselText.textContent = texts[index];
-                imageContainer.style.visibility = 'visible';
-                text.classList.add('show');
-                imageContainer.style.opacity = '1';
-            } else {
-                imageContainer.style.opacity = '0';
-                text.classList.remove('show');
-                setTimeout(() => {
-                    if (window.scrollY <= 2000) {  // Skjuler innholdet før 2000 px
-                        imageContainer.style.visibility = 'hidden';
-                    }
-                }, 1000);
-            }
-        }
+        }, 1000);
+    }
+}
 
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollFraction = (scrollPosition - 2000) / (9000); // Justert for å matche høyden mellom 2000-9000 px
-            const index = Math.min(
-                Math.max(0, Math.floor(scrollFraction * (zoomLevels.length - 1))),
-                zoomLevels.length - 1
-            );
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = (scrollPosition - 2000) / (9000); // Justert for å matche høyden mellom 2000-11000 px
+    const index = Math.min(
+        Math.max(0, Math.floor(scrollFraction * (zoomLevels.length - 1))),
+        zoomLevels.length - 1
+    );
 
-            updateContent(index);
-        });
+    updateContent(index);
+});
 
-        updateContent(0);
+updateContent(0);
+
     </script>
 </body>
 </html>
