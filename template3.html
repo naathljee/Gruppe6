@@ -26,7 +26,11 @@
             <div class="image-container" id="image-container"></div>
             <div class="text" id="text">
                 <p id="carousel-text"></p>
+                <img id="specialImage" src="img/maps-story-bilde2.png" alt="Special Image" style="display: none;">
+                <img id="specialImage" src="img/maps-story-bilde3.png" alt="Special Image" style="display: none;">
             </div>
+
+
         </div>
         <div style="height: 10400px;"></div>
 
@@ -66,6 +70,7 @@
         const imageContainer = document.getElementById('image-container');
         const carouselText = document.getElementById('carousel-text');
         const text = document.getElementById('text');
+        const specialImage = document.getElementById('specialImage');
         const texts = [
             'Fredriksten festning',
             '-Stutekollen: Karl XII dro svære kanoner opp på Stutekollen og bombarderte Gyldenløve fort i tre dager. Fortet ble knust og ved å bygge løpegraver klarte svenskene å storme fremover. Ifølge kommandant oberstløytnant Magne Rannestad ved Fredriksten festning var det på den lille høyden angrepet startet i 1718.',
@@ -105,18 +110,26 @@
     if (index >= zoomLevels.length) {
         index = zoomLevels.length - 1;
     }
-    if (window.scrollY > 2000 && window.scrollY < 11000) {  // Justert for å vise innholdet mellom 2000 og 11000 px
+    if (window.scrollY > 2000 && window.scrollY < 11000) {
         imageContainer.style.backgroundSize = zoomLevels[index].size;
         imageContainer.style.backgroundPosition = zoomLevels[index].position;
         carouselText.textContent = texts[index];
         imageContainer.style.visibility = 'visible';
         text.classList.add('show');
         imageContainer.style.opacity = '1';
+
+        // Check if the index is 3 and toggle the image display
+        if (index === 3) {
+            specialImage.style.display = 'block';
+        } else {
+            specialImage.style.display = 'none';
+        }
     } else {
         imageContainer.style.opacity = '0';
         text.classList.remove('show');
+        specialImage.style.display = 'none'; // Ensure the image is hidden when out of range
         setTimeout(() => {
-            if (window.scrollY <= 2000 || window.scrollY >= 11000) {  // Justert for å skjule innholdet før 2000 og etter 11000 px
+            if (window.scrollY <= 2000 || window.scrollY >= 11000) {
                 imageContainer.style.visibility = 'hidden';
             }
         }, 1000);
@@ -126,7 +139,7 @@
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = (scrollPosition - 2000) / (9000); // Justert for å matche høyden mellom 2000-11000 px
+    const scrollFraction = (scrollPosition - 2000) / (9000);
     const index = Math.min(
         Math.max(0, Math.floor(scrollFraction * (zoomLevels.length - 1))),
         zoomLevels.length - 1
@@ -140,3 +153,5 @@ updateContent(0);
     </script>
 </body>
 </html>
+
+

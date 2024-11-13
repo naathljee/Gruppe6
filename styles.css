@@ -642,6 +642,15 @@ justify-content: center;
 
 }
 
+#specialImage {
+    max-width: 100%;
+    height: auto;
+    display: none; /* Initially hidden */
+    z-index: 10;
+    border: 2px solid red; /* Add a red border to make the image stand out */
+}
+
+
 
 /* Dark Mode */
 .dark-mode.container-HistorieLiten2 {
