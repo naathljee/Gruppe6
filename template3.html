@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     
 </head>
-<body class="container-HistorieLiten2 background-HistorieLiten2">
+<body class="container-HistorieLiten2 background-HistorieLiten2"> <!--Sattelitt bilde fra google maps-->
     <header class="head-HistorieLiten2">
         <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logoHistorieLiten2-img"></a>
     </header>
@@ -116,7 +116,7 @@
         text.classList.add('show');
         imageContainer.style.opacity = '1';
 
-        // Check if the index is 3 and toggle the image display
+        // Se om index 3 vises, hvis så, endre display none til display block på "specialimage" 
         if (index === 3) {
             specialImage.style.display = 'block';
         } else {
@@ -125,7 +125,7 @@
     } else {
         imageContainer.style.opacity = '0';
         text.classList.remove('show');
-        specialImage.style.display = 'none'; // Ensure the image is hidden when out of range
+        specialImage.style.display = 'none';
         setTimeout(() => {
             if (window.scrollY <= 2000 || window.scrollY >= 11000) {
                 imageContainer.style.visibility = 'hidden';

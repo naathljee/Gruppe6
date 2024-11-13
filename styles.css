@@ -633,12 +633,12 @@ justify-content: center;
 .text::after { 
     content: ''; 
     position: absolute; 
-    bottom: 100%; /* Plasserer trekanten over tekstblokken */ 
+    bottom: 100%; 
     left: 50%; 
     transform: translateX(-50%); 
     border-width: 10px; 
     border-style: solid; 
-    border-color: transparent transparent var(--eradark) transparent; /* Trekanten har samme bakgrunnsfarge */ 
+    border-color: transparent transparent var(--eradark) transparent;
 
 }
 
