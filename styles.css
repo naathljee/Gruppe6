@@ -846,7 +846,7 @@ justify-content: center;
 }
 
 .xlstory-startcontent-background-image {
-    background-image: url('img/placeholder-image.png');
+    background-image: url('img/XL/XLforside.jpg');
     position: fixed;
     top: 0;
     left: 0;
@@ -861,7 +861,7 @@ justify-content: center;
 .xlstory-startcontent {
     position: relative;
     z-index: 1;
-    color: var(--eradark);
+    color: var(--eralight);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -869,6 +869,23 @@ justify-content: center;
     height: 90vh;
     width: 100%; 
     text-align: center; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: x-large;
+}
+
+.xlstory-starttext {
+    position: relative;
+    z-index: 1;
+    color: var(--eralight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%; 
+    text-align: center; 
+    -webkit-text-stroke: 1px var(--eralight);
+    font-size: x-large;
 }
 
 

@@ -16,20 +16,49 @@
     </header>
     <main class="xlstory-main">
 
+
         <div class="xlstory-startcontent-background-image" id="background-image"></div>
         <div class="xlstory-startcontent">
-            <h1>Det er lett å være student.</h1>
-        </div>
+            <h1>Når ansvarsfraskrivelse forurenser.</h1>
+         </div>
+
+            <div style="height: 800px;"></div>
+
+            <div class="xlstory-starttext">
+         <p>Ifølge båtlivsundersøkelsen fra 2023 er det 1.067.000 båter i Norge.</p>
+            </div>
        
+            <div style="height: 800px;"></div>
+
+            <div class="xlstory-starttext">
+         <p> Miljødirektoratet har opplyst at fra 2017 og fram til i dag, så blir det årlig innlevert mellom 10 000 og 14 000 båter lovlig til avfallsanlegget. </p>
+            </div>
+
+            <div style="height: 800px;"></div>
+
+            <div class="xlstory-starttext">
+         <p>Mange følger reglene og tar ansvar.</p>
+            </div>
+
+            <div style="height: 800px;"></div>
+
+            <div class="xlstory-starttext">
+         <p>Men, i følge det kongelige norske båtforbundet er det estimert at rundt 5000 fritidsbåter blir ulovlig senket hvert år.</p>
+            </div>
+
+
+           
     </main>
 
     
     <script>
+
+ //Gjør så ERA logoen forsvinner etter 35 pixler scroling
 let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         let header = document.querySelector('.head-xlstory');
         let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop && st > 150) {
+        if (st > lastScrollTop && st > 35) {
             header.style.top = '-150px';
         } else {
             header.style.top = '0';
@@ -37,12 +66,13 @@ let lastScrollTop = 0;
         lastScrollTop = st <= 0 ? 0 : st;
     });
 
+    //Endre bakgrunnsbilde i starten av story`n
 window.addEventListener('scroll', function() {
         const backgroundImage = document.getElementById('background-image');
         if (window.scrollY > 250) {
-            backgroundImage.style.backgroundImage = "url('img/placeholder-image2.png')";
+            backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
         } else {
-            backgroundImage.style.backgroundImage = "url('img/placeholder-image.png')";
+            backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
         }
     });
 
