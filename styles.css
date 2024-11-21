@@ -802,8 +802,8 @@ justify-content: center;
 
 .container-xlstory {
     width: 100%;
-    max-width: 800px; 
-    min-width: 130px;
+    max-width: 1500px; 
+    min-width: 600px;
     margin: 0 auto; 
     padding: 20px;
     font-family: "SUSE", sans-serif;
@@ -842,8 +842,13 @@ justify-content: center;
 }
 
 .xlstory-main {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
     padding: 20px 0;
 }
+
 
 .xlstory-startcontent-background-image {
     background-image: url('img/XL/XLforside.jpg');
@@ -858,6 +863,8 @@ justify-content: center;
     transition: background-image 0.7s ease-in-out;
 }
 
+
+
 .xlstory-startcontent {
     position: relative;
     z-index: 1;
@@ -871,9 +878,12 @@ justify-content: center;
     text-align: center; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     font-size: x-large;
+    max-width: 800px;
+   
 }
 
 .xlstory-starttext {
+    max-width: 800px; 
     position: relative;
     z-index: 1;
     color: var(--eralight);
@@ -886,9 +896,93 @@ justify-content: center;
     text-align: center; 
     -webkit-text-stroke: 1px var(--eralight);
     font-size: x-large;
+    
 }
 
+.XLstorycards {
+    position: relative;
+    z-index: 1;
+    color: var(--eralight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: auto;
+    left: auto;
+    height: 90vh;
+    width: 90%; 
+    font-size: x-large;
+    background-color: #ddd;
+    border-radius: 3%;
+}
 
+@media only screen and (max-width: 550px) {
+    .xlstory-startcontent {
+        
+        height: 100vh;
+      
+       
+    }
+    
+    .xlstory-starttext {
+        
+        height: 100vh;
+       
+        
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+    .xlstory-startcontent {
+        
+        height: 150vh;
+      
+       
+    }
+    
+    .xlstory-starttext {
+        
+        height: 150vh;
+       
+        
+    }
+    
+}
+
+@media only screen and (max-width: 350px) {
+    .xlstory-startcontent {
+        
+        height: 185vh;
+      
+       
+    }
+    
+    .xlstory-starttext {
+        
+        height: 185vh;
+       
+        
+    }
+    
+}
+
+@media only screen and (max-width: 275px) {
+    .xlstory-startcontent {
+        
+        height: 200vh;
+      
+       
+    }
+    
+    .xlstory-starttext {
+        
+        height: 200vh;
+       
+        
+    }
+    
+}
 
 /*Template side*/
 
