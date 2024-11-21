@@ -48,8 +48,14 @@
 
             <div style="height: 800px;"></div>
 
-            <div class="XLstorycards">
+            <div class="xlstory-imagecollage" id="imagecollagexl">
+                <img src="img/XL/collage/image1.jpg" alt="bilde 1" class="visible">
+            </div>
 
+            <div style="height: 15000px;"></div>
+
+            <div class="XLstorycards">
+         
             </div>
            
     </main>
@@ -80,7 +86,177 @@ window.addEventListener('scroll', function() {
         }
     });
 
+
+
+
+
+    const imageContainer = document.getElementById('imagecollagexl');
+const imagePaths = [
+    'img/XL/collage/image1.jpg',
+    'img/XL/collage/image2.jpg',
+    'img/XL/collage/image3.jpg',
+    'img/XL/collage/image4.jpg',
+    'img/XL/collage/image5.jpg',
+    'img/XL/collage/image6.jpg',
+    'img/XL/collage/image7.jpg',
+    'img/XL/collage/image8.jpg',
+    'img/XL/collage/image9.jpg',
+    'img/XL/collage/image10.jpg',
+    'img/XL/collage/image11.jpg',
+    'img/XL/collage/image12.jpg',
+    'img/XL/collage/image13.jpg',
+    'img/XL/collage/image14.jpg',
+    'img/XL/collage/image15.jpg',
+    'img/XL/collage/image16.jpg',
+    'img/XL/collage/image17.jpg',
+    'img/XL/collage/image18.jpg',
+    'img/XL/collage/image19.jpg',
+    'img/XL/collage/image20.jpg',
+    'img/XL/collage/image21.jpg',
+    'img/XL/collage/image22.jpg',
+    'img/XL/collage/image23.jpg',
+    'img/XL/collage/image24.jpg',
+];
+
+let startScrollPosition = 7100; // Initial start scroll position
+const threshold = 200; // Adjust the scroll threshold as needed
+const fadeOutBuffer = 1000; // Additional scroll distance before fading out
+
+// Function to update startScrollPosition based on screen width
+const updateStartScrollPosition = () => {
+    if (window.innerWidth < 450) {
+        startScrollPosition = 8100; // Set to 8100 for small screens
+        console.log(`Adjusted for small screen width: ${window.innerWidth}px, new startScrollPosition: ${startScrollPosition}`);
+    } else {
+        startScrollPosition = 7100; // Reset to default for larger screens
+        console.log(`Screen width is sufficient: ${window.innerWidth}px, startScrollPosition remains: ${startScrollPosition}`);
+    }
+};
+
+// Run the function on initial load
+updateStartScrollPosition();
+
+// Update on window resize
+window.addEventListener('resize', updateStartScrollPosition);
+
+let loadedImages = [];
+
+// Preload images
+for (let i = 0; i < imagePaths.length; i++) {
+    const img = new Image();
+    img.src = imagePaths[i];
+    loadedImages.push(img);
+}
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    console.log(`Scroll Position: ${scrollPosition}`);
+    console.log(`Start Scroll Position: ${startScrollPosition}`);
+
+    if (scrollPosition >= startScrollPosition) {
+        imageContainer.style.opacity = 1; // Fade in the container
+
+        const imagesToShow = Math.min(Math.floor((scrollPosition - startScrollPosition) / threshold) + 1, imagePaths.length);
+        console.log(`Images to Show: ${imagesToShow}`);
+
+        imageContainer.innerHTML = '';
+        for (let i = 0; i < imagesToShow; i++) {
+            const img = loadedImages[i].cloneNode();
+            img.classList.add('visible');
+            imageContainer.appendChild(img);
+        }
+
+        // Adjust grid layout based on the number of images
+        switch (true) {
+            case (imagesToShow === 1):
+                imageContainer.style.gridTemplateColumns = '1fr';
+                imageContainer.style.gridTemplateRows = '1fr';
+                break;
+            case (imagesToShow <= 3):
+                imageContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                imageContainer.style.gridTemplateRows = '1fr';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh)';
+                });
+                break;
+            case (imagesToShow <= 6):
+                imageContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(2, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 2)';
+                });
+                break;
+            case (imagesToShow <= 9):
+                imageContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(3, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 3)';
+                });
+                break;
+            case (imagesToShow <= 12):
+                imageContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(3, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 3)';
+                });
+                break;
+            case (imagesToShow <= 15):
+                imageContainer.style.gridTemplateColumns = 'repeat(5, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(3, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 3)';
+                });
+                break;
+            case (imagesToShow <= 18):
+                imageContainer.style.gridTemplateColumns = 'repeat(6, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(3, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 3)';
+                });
+                break;
+            case (imagesToShow <= 21):
+                imageContainer.style.gridTemplateColumns = 'repeat(7, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(3, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 3)';
+                });
+                break;
+            case (imagesToShow <= 24):
+                imageContainer.style.gridTemplateColumns = 'repeat(6, 1fr)';
+                imageContainer.style.gridTemplateRows = 'repeat(4, 1fr)';
+                imageContainer.querySelectorAll('img').forEach(img => {
+                    img.style.width = '100%';
+                    img.style.height = 'calc(100vh / 4)';
+                });
+                break;
+        }
+
+        if (scrollPosition >= startScrollPosition + (24 * threshold) + fadeOutBuffer) {
+            imageContainer.style.opacity = 0; // Fade out the entire container after 24 images + buffer
+        }
+    } else {
+        imageContainer.style.opacity = 0; // Keep container hidden until scroll position is reached
+    }
+});
+
+        
     </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
