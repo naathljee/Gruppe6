@@ -816,11 +816,7 @@ justify-content: center;
     background-attachment: fixed;
 }
 
-.xlstory-img {
-    max-width: 20%;
-    height: auto;
-    display: block;
-}
+
 
 .head-xlstory {
     position: fixed;
@@ -919,13 +915,13 @@ justify-content: center;
 .xlstory-imagecollage {
     display: grid;
     gap: 10px;
-    position: fixed; /* Fixes the position of the images */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    opacity: 0; /* Start with hidden container */
-    transition: opacity 1s ease; /* Smooth fade-in effect */
+    opacity: 0;
+    transition: opacity 1s ease; 
     align-items: center;
     justify-items: center;
 }
@@ -934,86 +930,36 @@ justify-content: center;
     height: 100vh;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease, transform 1s ease; /* Smooth fade-in and scale */
+    transition: opacity 1s ease, transform 1s ease; 
 }
 .xlstory-imagecollage img.visible {
     opacity: 1;
     transform: scale(1);
 }
 
-
-
-
-
-
-
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 560px) {
     .xlstory-startcontent {
-        
-        height: 100vh;
-      
-       
-    }
-    
-    .xlstory-starttext {
-        
-        height: 100vh;
-       
-        
-    }
-    
+    height: 105vh;
+}
+
 }
 
 @media only screen and (max-width: 450px) {
     .xlstory-startcontent {
-        
-        height: 150vh;
-      
-       
-    }
-    
-    .xlstory-starttext {
-        
-        height: 150vh;
-       
-        
-    }
-    
+    height: 135vh;
 }
 
-@media only screen and (max-width: 350px) {
-    .xlstory-startcontent {
-        
-        height: 185vh;
-      
-       
-    }
-    
-    .xlstory-starttext {
-        
-        height: 185vh;
-       
-        
-    }
-    
 }
 
-@media only screen and (max-width: 275px) {
+@media only screen and (max-width: 360px) {
     .xlstory-startcontent {
-        
-        height: 200vh;
-      
-       
-    }
-    
-    .xlstory-starttext {
-        
-        height: 200vh;
-       
-        
-    }
-    
+    height: 165vh;
 }
+
+}
+
+
+
 
 /*Template side*/
 
