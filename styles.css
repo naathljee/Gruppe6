@@ -896,21 +896,77 @@ justify-content: center;
 }
 
 .XLstorycards {
+    display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 1;
     color: var(--eralight);
+    height: 90vh;
+    width: 90%;
+    border-radius: 3%;
+    padding: 20px;
+  }
+  
+  .XLstorycards h2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .XLstorycardcontent {
+    display: flex;
+    flex: 1;
+  }
+  
+  .XLstorycardimage {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    right: auto;
-    left: auto;
-    height: 90vh;
-    width: 90%; 
-    font-size: x-large;
-    background-color: #ddd;
-    border-radius: 3%;
-}
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .XLstorycardimage img {
+    max-width: 100%;
+    margin-bottom: 20px; 
+    border-radius: 5%;
+  }
+  
+  .XLstorycardtext {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    justify-content: center;
+    padding: 20px;
+    font-size: small;
+    text-align: left;
+  }
+  
+
+  .XLstoryvideo-vid {
+    width: 100%;
+    height: auto; 
+    max-height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .XLstoryquestions {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .XLstoryanswers {
+
+  }
+  
+
+
+
 
 .xlstory-imagecollage {
     display: grid;
@@ -930,7 +986,8 @@ justify-content: center;
     height: 100vh;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1s ease, transform 1s ease; 
+    transition: opacity 1s ease, transform 1s ease;
+    border-radius: 5%;
 }
 .xlstory-imagecollage img.visible {
     opacity: 1;

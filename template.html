@@ -55,15 +55,44 @@
             <div style="height: 6000px;"></div>
 
             <div class="xlstory-starttext">
-         <p>Dette er bare 0,5 % av alle vrakbåtene i Norge. Tenk deg resten.</p>
+         <p>Dette er 0,1 % av alle vrakbåtene i Norge. Tenk deg resten.</p>
             </div>
 
+            <div style="height: 800px;"></div>
+
+            <div class="xlstory-starttext">
+                <p>Oslofjordens Friluftsråd er en organisasjon som henter båtvrak.</p> 
+                  <div class="XLstoryvideo">
+                    <video class="XLstoryvideo-vid" width="600" muted autoplay>
+                      <source src="img/XL/Oslofjordens-Friluftsråd-lekter.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  
+                   </div>
+
+                
 
             <div style="height: 800px;"></div>
 
             <div class="XLstorycards">
-         
-            </div>
+                <h2>Bjørn Heidenstrøm jobber i Oslofjordens Friluftsråd.</h2>
+                <div class="XLstorycardcontent">
+                  <div class="XLstorycardimage">
+                    <img src="img/XL/bjorn1.jpg" alt="Beskrivelse av bildet">
+                    <img src="img/XL/bjorn2.jpg" alt="Beskrivelse av bildet">
+                  </div>
+                  <div class="XLstorycardtext">
+                    <p class="XLstoryquestions">Hvilke områder langs kysten ser du er mest påvirket av forurensning fra båtvrak?</p>
+                    <p class="XLstoryanswers">Jeg opererer helt fra Halden, helt inn til Oslo Aker brygge, så videre til ned til Larvik, den gamle definisjonen av Oslofjorden. På dette strekket hvor det er veldig mye hus og leilighets befolkning, så er det jo båter, og derfor vrakbåter. Der hvor folk finner ut av det ikke er mye, skal vi kalle det innsyn, der tenker de at her kan jeg legge båten min gratis. Så glemmer de båten sin, eller blir syke, eller gamle og dør. Andre vil ikke bruke masse penger for å levere båten sin, så de bare setter båten borti de området der med lite innsyn. </p>
+                    <p class="XLstoryquestions">Hhvordan påvirker båtvrak fiskebestand?</p>
+                    <p class="XLstoryanswers"></p>
+                    <p class="XLstoryquestions">Hvordan påvirker båtvrak marine økosystemer, spesielt med tanke på Mattrygghet?</p>
+                    <p class="XLstoryanswers"></p>
+                  </div>
+                </div>
+              </div>
+              
+              
            
     </main>
 
@@ -84,19 +113,22 @@ let lastScrollTop = 0;
     });
 
     //Endre bakgrunnsbilde i starten av story`n
-window.addEventListener('scroll', function() {
-        const backgroundImage = document.getElementById('background-image');
-        if (window.scrollY > 250) {
-            backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
-        } else {
-            backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
-        }
-    });
+    window.addEventListener('scroll', function () {
+    const backgroundImage = document.getElementById('background-image');
+
+    if (window.scrollY > 14400) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
+    } else if (window.scrollY > 250) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+    } else {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
+    }
+});
 
 
 
 
-
+//Gjør så bilde collagen vises etter 7100px
 const imageContainer = document.getElementById('imagecollagexl');
 const imagePaths = [
     'img/XL/collage/image1.jpg',
@@ -125,30 +157,31 @@ const imagePaths = [
     'img/XL/collage/image24.jpg',
 ];
 
-let startScrollPosition = 7100; // Initial start scroll position
-const threshold = 200; // Adjust the scroll threshold as needed
-const fadeOutBuffer = 1000; // Additional scroll distance before fading out
+let startScrollPosition = 7100; 
+const threshold = 200; 
+const fadeOutBuffer = 1000; 
 
-// Function to update startScrollPosition based on screen width
+
+
 const updateStartScrollPosition = () => {
     if (window.innerWidth < 450) {
-        startScrollPosition = 8100; // Set to 8100 for small screens
+        startScrollPosition = 8100; //Blir ikke brukt, gammel kode som skulle endre startscrolposition for koden fra 7100 for datamaskiner til 8100 for mobiler forgrunna media queries. 
         console.log(`Adjusted for small screen width: ${window.innerWidth}px, new startScrollPosition: ${startScrollPosition}`);
     } else {
-        startScrollPosition = 7100; // Reset to default for larger screens
+        startScrollPosition = 7100; 
         console.log(`Screen width is sufficient: ${window.innerWidth}px, startScrollPosition remains: ${startScrollPosition}`);
     }
 };
 
-// Run the function on initial load
+
 updateStartScrollPosition();
 
-// Update on window resize
+
 window.addEventListener('resize', updateStartScrollPosition);
 
 let loadedImages = [];
 
-// Preload images
+
 for (let i = 0; i < imagePaths.length; i++) {
     const img = new Image();
     img.src = imagePaths[i];
@@ -161,7 +194,7 @@ window.addEventListener('scroll', () => {
     console.log(`Start Scroll Position: ${startScrollPosition}`);
 
     if (scrollPosition >= startScrollPosition) {
-        imageContainer.style.opacity = 1; // Fade in the container
+        imageContainer.style.opacity = 1; 
 
         const imagesToShow = Math.min(Math.floor((scrollPosition - startScrollPosition) / threshold) + 1, imagePaths.length);
         console.log(`Images to Show: ${imagesToShow}`);
@@ -173,7 +206,7 @@ window.addEventListener('scroll', () => {
             imageContainer.appendChild(img);
         }
 
-        // Adjust grid layout based on the number of images
+        
         switch (true) {
             case (imagesToShow === 1):
                 imageContainer.style.gridTemplateColumns = '1fr';
@@ -246,10 +279,10 @@ window.addEventListener('scroll', () => {
         }
 
         if (scrollPosition >= startScrollPosition + (24 * threshold) + fadeOutBuffer) {
-            imageContainer.style.opacity = 0; // Fade out the entire container after 24 images + buffer
+            imageContainer.style.opacity = 0; 
         }
     } else {
-        imageContainer.style.opacity = 0; // Keep container hidden until scroll position is reached
+        imageContainer.style.opacity = 0; 
     }
 });
 
