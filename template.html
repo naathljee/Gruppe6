@@ -131,18 +131,24 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 16400) {
+    if (window.scrollY > 19400) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 16400) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 14800) {
-        backgroundImage.style.backgroundImage = 'none'; 
-        backgroundVideo.style.display = 'block'; 
+    } else if (window.scrollY > 16000) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+        backgroundVideo.style.display = 'none';
+    }  else if (window.scrollY > 14800) {
+        backgroundImage.style.backgroundImage = 'none';
+        backgroundVideo.style.display = 'block';
     } else if (window.scrollY > 250) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
-        backgroundVideo.style.display = 'none'; 
+        backgroundVideo.style.display = 'none';
     } else {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
-        backgroundVideo.style.display = 'none'; 
+        backgroundVideo.style.display = 'none';
     }
 });
 
