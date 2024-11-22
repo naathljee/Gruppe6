@@ -802,51 +802,48 @@ justify-content: center;
 
 .container-xlstory {
     width: 100%;
-    max-width: 1500px; 
+    max-width: 1500px;
     min-width: 600px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 20px;
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--eradark);
-    background-image: url('img/placeholder-image-background-dark.png');
+    /* background-image: url('img/placeholder-image-background-dark.png'); */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-
-
-.head-xlstory {
+  }
+  
+  .head-xlstory {
     position: fixed;
     padding-top: 2%;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;   
-    max-width: 1200px;  
+    width: 90%;
+    max-width: 1200px;
     z-index: 1;
     transition: top 0.3s;
-}
-
-.xlstory-img {
+  }
+  
+  .xlstory-img {
     min-width: 50px;
     max-width: 10%;
     height: auto;
     display: block;
-}
-
-.xlstory-main {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+  }
+  
+  .xlstory-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     padding: 20px 0;
-}
-
-
-.xlstory-startcontent-background-image {
+  }
+  
+  .xlstory-startcontent-background-image {
     background-image: url('img/XL/XLforside.jpg');
     position: fixed;
     top: 0;
@@ -857,11 +854,9 @@ justify-content: center;
     background-position: center;
     z-index: -1;
     transition: background-image 0.7s ease-in-out;
-}
-
-
-
-.xlstory-startcontent {
+  }
+  
+  .xlstory-startcontent {
     position: relative;
     z-index: 1;
     color: var(--eralight);
@@ -870,16 +865,15 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     height: 90vh;
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     font-size: x-large;
     max-width: 800px;
-   
-}
-
-.xlstory-starttext {
-    max-width: 800px; 
+  }
+  
+  .xlstory-starttext {
+    max-width: 800px;
     position: relative;
     z-index: 1;
     color: var(--eralight);
@@ -888,14 +882,13 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     height: 90vh;
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
     -webkit-text-stroke: 1px var(--eralight);
     font-size: x-large;
-    
-}
-
-.XLstorycards {
+  }
+  
+  .XLstorycards {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -913,7 +906,6 @@ justify-content: center;
     margin-right: auto;
   }
   
-  
   .XLstorycardcontent {
     display: flex;
     flex: 1;
@@ -930,91 +922,92 @@ justify-content: center;
   
   .XLstorycardimage img {
     max-width: 100%;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     border-radius: 5%;
   }
   
   .XLstorycardtext {
     flex: 1;
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
     font-size: small;
     text-align: left;
   }
   
-
-  .XLstoryvideo-vid {
+  .XLstoryvideo {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto; 
-    max-height: 90vh;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    z-index: -1;
   }
   
-
+  .XLstoryvideo-vid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; 
+  }
+  
   .XLstoryquestions {
     font-weight: bold;
     font-style: italic;
   }
-
+  
   .XLstoryanswers {
-
+    
   }
   
-
-
-
-
-.xlstory-imagecollage {
+  .xlstory-imagecollage {
     display: grid;
     gap: 10px;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     opacity: 0;
-    transition: opacity 1s ease; 
+    transition: opacity 1s ease;
     align-items: center;
     justify-items: center;
-}
-.xlstory-imagecollage img {
+  }
+  
+  .xlstory-imagecollage img {
     width: 100%;
     height: 100vh;
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
     border-radius: 5%;
-}
-.xlstory-imagecollage img.visible {
+  }
+  
+  .xlstory-imagecollage img.visible {
     opacity: 1;
     transform: scale(1);
-}
-
-@media only screen and (max-width: 560px) {
+  }
+  
+  @media only screen and (max-width: 560px) {
     .xlstory-startcontent {
-    height: 105vh;
-}
-
-}
-
-@media only screen and (max-width: 450px) {
+      height: 105vh;
+    }
+  }
+  
+  @media only screen and (max-width: 450px) {
     .xlstory-startcontent {
-    height: 135vh;
-}
-
-}
-
-@media only screen and (max-width: 360px) {
+      height: 135vh;
+    }
+  }
+  
+  @media only screen and (max-width: 360px) {
     .xlstory-startcontent {
-    height: 165vh;
-}
-
-}
-
+      height: 165vh;
+    }
+  }
+  
 
 
 

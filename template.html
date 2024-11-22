@@ -62,13 +62,13 @@
 
             <div class="xlstory-starttext">
                 <p>Oslofjordens Friluftsråd er en organisasjon som henter båtvrak.</p> 
-                  <div class="XLstoryvideo">
-                    <video class="XLstoryvideo-vid" width="600" muted autoplay>
-                      <source src="img/XL/Oslofjordens-Friluftsråd-lekter.mp4" type="video/mp4">
-                    </video>
-                  </div>
-                  
-                   </div>
+                <div class="XLstoryvideo" id="background-image">
+                  <video class="XLstoryvideo-vid" id="background-video" muted autoplay loop>
+                    <source src="img/XL/Oslofjordens-Friluftsråd-lekter.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+              
 
                 
 
@@ -115,15 +115,23 @@ let lastScrollTop = 0;
     //Endre bakgrunnsbilde i starten av story`n
     window.addEventListener('scroll', function () {
     const backgroundImage = document.getElementById('background-image');
+    const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 14400) {
+    if (window.scrollY > 16400) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 14200) {
+        backgroundImage.style.backgroundImage = 'none'; 
+        backgroundVideo.style.display = 'block'; 
     } else if (window.scrollY > 250) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+        backgroundVideo.style.display = 'none'; 
     } else {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
+        backgroundVideo.style.display = 'none'; 
     }
 });
+
 
 
 
