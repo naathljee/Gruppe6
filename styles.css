@@ -891,7 +891,7 @@ justify-content: center;
   max-width: 800px;
   position: relative;
   z-index: 1;
-  color: white; /* Set text color to white */
+  color: var(--eralight); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -907,31 +907,52 @@ justify-content: center;
   font-size: x-large;
 }
 
-  
-  .XLstorycards {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 1;
-    color: var(--eralight);
-    height: 90vh;
-    width: 90%;
-    border-radius: 3%;
+.XLstorycards {
+    display: none;  
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 20px;
-    text-align: center;
+  padding-top: 50px;
+    z-index: 1000;
+    width: 60%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-  
-  .XLstorycards h2 {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--eralight);
-  }
-  
-  .XLstorycardcontent {
+
+.XLstorycards.show {
+    opacity: 1;  
+}
+
+.XLstorycardcontent {
     display: flex;
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+}
+
+.XLstoryquestions,
+.XLstoryanswers {
+    margin: 10px;
+}
+
+
+  
+  .XLstorycards h1 {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--eradark);
+    text-align: center;
   }
+  
+ 
   
   .XLstorycardimage {
     flex: 1;
@@ -955,9 +976,16 @@ justify-content: center;
     align-items: flex-start;
     justify-content: center;
     padding: 20px;
-    font-size: small;
+    font-size: xx-large;
     text-align: left;
+    color: #282828;
   }
+
+  .XLstorycardtext p {
+
+    transition: opacity 1s;
+  }
+  
   
   .XLstoryvideo {
     position: fixed;
@@ -1026,22 +1054,38 @@ justify-content: center;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     font-size: xx-large;
-    padding-top: 20px; /* Eksempel: Justere padding for å flytte teksten nedover */
+    padding-top: 20px; 
 }
 
 .xlstory-parttext h1 {
-    margin-bottom: 5px; /* Redusere marginen nederst for å bringe p-elementet nærmere */
+    margin-bottom: 5px; 
 }
 
 .xlstory-parttext p {
-    margin-top: 0; /* Fjern eventuell toppmargin for p-elementet */
+    margin-top: 0; 
 }
 
-
+@media only screen and (max-width: 930px) {
+  
+    .XLstorycards {
+      
+        width: 80%;
+       
+    }
+  }
   
   @media only screen and (max-width: 560px) {
     .xlstory-startcontent {
       height: 105vh;
+    }
+    .XLstorycards {
+      
+        width: 110%;
+       
+    }
+    .XLstorycardcontent {
+        font-size: x-large;
+       
     }
   }
   
@@ -1049,11 +1093,25 @@ justify-content: center;
     .xlstory-startcontent {
       height: 135vh;
     }
+    .XLstorycards {
+      
+        width: 115%;
+       
+    }
+    .XLstorycardcontent {
+        font-size: xx-large;
+       
+    }
   }
   
   @media only screen and (max-width: 360px) {
     .xlstory-startcontent {
       height: 165vh;
+    }
+    .XLstorycards {
+      
+        width: 110%;
+       
     }
   }
   

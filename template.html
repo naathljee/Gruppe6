@@ -71,35 +71,30 @@
               
 
 
-            <div style="height: 800px;"></div>
+            <div style="height: 1400px;"></div>
 
             <div class="xlstory-parttext">
             <h1>Del 2</h1>
-            <h3></h3>
+            <p></p>
                </div>
 
-               <div style="height: 800px;"></div>
+               <div style="height: 200px;"></div>
 
-            <div class="XLstorycards">
-                <h2>Bjørn Heidenstrøm jobber i Oslofjordens Friluftsråd.</h2>
+               <div class="XLstorycards">
+                <h1 id="XLstorycardheader">Bjørn Heidenstrøm jobber i Oslofjordens Friluftsråd.</h1>
+                <div style="height: 50px;"></div>
                 <div class="XLstorycardcontent">
-                  <div class="XLstorycardimage">
-                    <img src="img/XL/bjorn1.jpg" alt="Beskrivelse av bildet">
-                    <img src="img/XL/bjorn2.jpg" alt="Beskrivelse av bildet">
-                  </div>
-                  <div class="XLstorycardtext">
-                    <p class="XLstoryquestions">Hvilke områder langs kysten ser du er mest påvirket av forurensning fra båtvrak?</p>
-                    <p class="XLstoryanswers">Jeg opererer helt fra Halden, helt inn til Oslo Aker brygge, så videre til ned til Larvik, den gamle definisjonen av Oslofjorden. På dette strekket hvor det er veldig mye hus og leilighets befolkning, så er det jo båter, og derfor vrakbåter. Der hvor folk finner ut av det ikke er mye, skal vi kalle det innsyn, der tenker de at her kan jeg legge båten min gratis. Så glemmer de båten sin, eller blir syke, eller gamle og dør. Andre vil ikke bruke masse penger for å levere båten sin, så de bare setter båten borti de området der med lite innsyn. </p>
-                    <p class="XLstoryquestions">Hhvordan påvirker båtvrak fiskebestand?</p>
-                    <p class="XLstoryanswers"></p>
-                    <p class="XLstoryquestions">Hvordan påvirker båtvrak marine økosystemer, spesielt med tanke på Mattrygghet?</p>
-                    <p class="XLstoryanswers"></p>
-                  </div>
+                  <p class="XLstoryquestions"></p>
+                  <p class="XLstoryanswers"></p>
                 </div>
               </div>
               
               
-              <div style="height: 800px;"></div>
+              
+              
+
+              
+              <div style="height: 4000px;"></div>
 
 
               <div class="xlstory-parttext">
@@ -131,16 +126,26 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 19400) {
+    if (window.scrollY > 25400) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 16400) {
+    } else if (window.scrollY > 19900) {
+        backgroundImage.style.backgroundImage = "url('img/XL/bjorn2.jpg')";
+        backgroundImage.style.backgroundPosition = "center left"; 
+        backgroundImage.style.backgroundSize = "cover"; 
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 18800) {
+        backgroundImage.style.backgroundImage = "url('img/XL/bjorn1.jpg')";
+        backgroundImage.style.backgroundPosition = "center right"; 
+        backgroundImage.style.backgroundSize = "cover"; 
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 18500) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 16000) {
-        backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+    } else if (window.scrollY > 16300) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
         backgroundVideo.style.display = 'none';
-    }  else if (window.scrollY > 14800) {
+    }  else if (window.scrollY > 14900) {
         backgroundImage.style.backgroundImage = 'none';
         backgroundVideo.style.display = 'block';
     } else if (window.scrollY > 250) {
@@ -314,7 +319,61 @@ window.addEventListener('scroll', () => {
     }
 });
 
-        
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const xlstorycards = document.querySelector(".XLstorycards");
+    const cardHeader = document.getElementById("XLstorycardheader");
+    const cardQuestions = document.querySelector(".XLstoryquestions");
+    const cardAnswers = document.querySelector(".XLstoryanswers");
+
+    const questions = [
+        "Hvilke områder langs kysten ser du er mest påvirket av forurensning fra båtvrak?",
+        "Hvordan påvirker båtvrak fiskebestand?",
+        "Hvordan påvirker båtvrak marine økosystemer, spesielt med tanke på mattrygghet?",
+        "Finnes det målinger som viser forskjell i vannkvalitet og marine økosystemer før og etter fjerning av båtvrak fra et område?"
+    ];
+    const answers = [
+        "Jeg opererer helt fra Halden, via Oslo Aker brygge, til Larvik. Her er det mange hus og leiligheter, og dermed også båter og vrak. Folk setter ofte fra seg båtene der det er lite innsyn, og de blir glemt eller etterlatt.",
+        "Vi har ingen målinger av stoffene som avgis, men vi vet at båtvrak slipper ut PFAS, kvikksølv, kobber og andre giftige eller hormonforstyrrende stoffer. Disse kan være dødelige eller redusere forplantningsevnen til fisk og andre organismer.",
+        "Båtvrak slipper ut mikro- og nanoplast som forurenser marine planter og dyr, og kan forårsake sykdommer. Forskning fra Nederland viser at nanoplast finnes i menneskeblod, noe som reiser spørsmål om helseeffekter.",
+        "Visuelle observasjoner viser store forskjeller. I Ferder nasjonalpark har frodige økosystemer blitt til øde ørkener på grunn av båtens bunnstoff. Vi mangler fortsatt omfattende forskningsdata, men bunnstoff og nanoplast er kjent for å påvirke miljøet."
+    ];
+
+    // Definer start og sluttpunkt for visning av XLstorycards
+    const start = 18800;
+    const end = 20700;
+
+    function showCardContent(index) {
+        if (index < questions.length) {
+            cardQuestions.textContent = questions[index];
+            cardAnswers.textContent = answers[index];
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY >= start && scrollY < end) {
+            xlstorycards.style.display = 'block';
+            xlstorycards.style.opacity = '1';
+
+            const index = Math.floor((scrollY - start) / 400);  // Endre intervallet fra 200px til 400px
+
+            if (index < questions.length) {
+                showCardContent(index);
+            }
+        } else {
+            xlstorycards.style.display = 'none';
+            xlstorycards.style.opacity = '0';
+        }
+    });
+});
+
+
+
+
     </script>
 
 </body>
