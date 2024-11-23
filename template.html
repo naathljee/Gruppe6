@@ -12,8 +12,9 @@
 </head>
 <body class="container-xlstory">
     <header class="head-xlstory">
-        <a href="index.html"><img src="img/ERA.png" alt="Placeholder image" class="xlstory-img"></a>
+        <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="xlstory-img"></a>
     </header>
+    
     <main class="xlstory-main">
 
       
@@ -60,6 +61,13 @@
 
             <div style="height: 800px;"></div>
 
+            <div class="xlstory-parttext">
+                <h1>Del 2</h1>
+                <p>I kamp mot vrakene.</p>
+                   </div>
+
+            <div style="height: 800px;"></div>
+
             <div class="xlstory-starttext2">
                 <p>Oslofjordens Friluftsråd er en organisasjon som henter båtvrak.</p> 
                 <div class="XLstoryvideo" id="background-image">
@@ -71,14 +79,10 @@
               
 
 
-            <div style="height: 1400px;"></div>
 
-            <div class="xlstory-parttext">
-            <h1>Del 2</h1>
-            <p></p>
-               </div>
+            
 
-               <div style="height: 200px;"></div>
+               <div style="height: 600px;"></div>
 
                <div class="XLstorycards">
                 <h1 id="XLstorycardheader">Bjørn Heidenstrøm jobber i Oslofjordens Friluftsråd.</h1>
@@ -94,7 +98,7 @@
               
 
               
-              <div style="height: 4000px;"></div>
+              <div style="height: 3500px;"></div>
 
 
               <div class="xlstory-parttext">
@@ -126,10 +130,10 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 25400) {
+    if (window.scrollY > 20700) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 19900) {
+    } else if (window.scrollY > 19400) {
         backgroundImage.style.backgroundImage = "url('img/XL/bjorn2.jpg')";
         backgroundImage.style.backgroundPosition = "center left"; 
         backgroundImage.style.backgroundSize = "cover"; 
@@ -139,15 +143,15 @@ let lastScrollTop = 0;
         backgroundImage.style.backgroundPosition = "center right"; 
         backgroundImage.style.backgroundSize = "cover"; 
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 18500) {
+    } else if (window.scrollY > 18800) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
         backgroundVideo.style.display = 'none';
     } else if (window.scrollY > 16300) {
-        backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
-        backgroundVideo.style.display = 'none';
-    }  else if (window.scrollY > 14900) {
         backgroundImage.style.backgroundImage = 'none';
         backgroundVideo.style.display = 'block';
+    }  else if (window.scrollY > 14900) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
+        backgroundVideo.style.display = 'none';
     } else if (window.scrollY > 250) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
         backgroundVideo.style.display = 'none';
@@ -321,7 +325,7 @@ window.addEventListener('scroll', () => {
 
 
 
-
+//kode som styrer text boksene om intervjuet med Bjørn fra Oslofjordens Friluftsråd
 document.addEventListener("DOMContentLoaded", function() {
     const xlstorycards = document.querySelector(".XLstorycards");
     const cardHeader = document.getElementById("XLstorycardheader");
@@ -341,8 +345,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "Visuelle observasjoner viser store forskjeller. I Ferder nasjonalpark har frodige økosystemer blitt til øde ørkener på grunn av båtens bunnstoff. Vi mangler fortsatt omfattende forskningsdata, men bunnstoff og nanoplast er kjent for å påvirke miljøet."
     ];
 
-    // Definer start og sluttpunkt for visning av XLstorycards
-    const start = 18800;
+    
+    const start = 18800; //starttid skal være det samme som når bakgrunnsbilde endres til bjorn1. 
     const end = 20700;
 
     function showCardContent(index) {
@@ -359,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
             xlstorycards.style.display = 'block';
             xlstorycards.style.opacity = '1';
 
-            const index = Math.floor((scrollY - start) / 400);  // Endre intervallet fra 200px til 400px
+            const index = Math.floor((scrollY - start) / 400);  
 
             if (index < questions.length) {
                 showCardContent(index);
