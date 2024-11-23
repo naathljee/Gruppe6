@@ -222,7 +222,13 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 29600) {
+    if (window.scrollY > 33500) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 32800) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside5.jpg')";
+        backgroundVideo.style.display = 'none';
+    }else if (window.scrollY > 29600) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
         backgroundVideo.style.display = 'none';
     } else if (window.scrollY > 28950) {
@@ -289,13 +295,13 @@ const imagePaths = [
     'img/XL/collage/image9.jpg',
     'img/XL/collage/image10.jpg',
     'img/XL/collage/image11.jpg',
-    'img/XL/collage/image12.jpg',
+    'img/XL/collage/image40.jpg',
     'img/XL/collage/image13.jpg',
     'img/XL/collage/image14.jpg',
-    'img/XL/collage/image15.jpg',
+    'img/XL/collage/image65.jpg',
     'img/XL/collage/image16.jpg',
     'img/XL/collage/image17.jpg',
-    'img/XL/collage/image18.jpg',
+    'img/XL/collage/image55.jpg',
     'img/XL/collage/image19.jpg',
     'img/XL/collage/image20.jpg',
     'img/XL/collage/image21.jpg',
