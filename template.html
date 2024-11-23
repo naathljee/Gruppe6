@@ -98,16 +98,30 @@
                 </div>
             </div>
             
-              <div style="height: 2000px;"></div>
+              <div style="height: 2500px;"></div>
 
               <div class="xlstory-parttext">
                 <h1>Del 3</h1>
                 <p>Når båtene synker, synker også håpet.</p>
                    </div>
 
-                   <div style="height: 800px;"></div>
+                <div style="height: 400px;"></div>
 
-                   
+                <div class="XLstorycardcontent3">
+                  
+                
+                <p>Regnet faller tungt over Glomma, og vinden bærer med seg en kald, metallisk lukt av råttent tre og diesel.</p>
+</div>
+
+                <div style="height: 800px;"></div>
+
+                <div class="XLstorycardcontent3">
+                <p>Ved en forlatt brygge ligger et vrak – en gang noens drøm, nå et symbol på forfall. Båten er nesten under vann, veggene er brannskadet, og det som en gang var et hjem, er nå et tomt skall.</p>
+            </div>
+
+
+
+                   <div style="height: 8000px;"></div>
     </main>
 
     
@@ -131,7 +145,13 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 24200) {
+    if (window.scrollY > 27800) {
+        backgroundImage.style.backgroundImage = "url('img/XL/collage/image60.jpg')";
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 26800) {
+        backgroundImage.style.backgroundImage = "url('img/XL/collage/image59.jpg')";
+        backgroundVideo.style.display = 'none';
+    } else if (window.scrollY > 24200) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
         backgroundVideo.style.display = 'none';
     } else if (window.scrollY > 20700) {

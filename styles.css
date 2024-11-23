@@ -1121,6 +1121,22 @@ justify-content: center;
 }
 
 
+.XLstorycardcontent3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    width: 65%;
+    color: var(--eralight);
+    text-shadow: 
+    -2px -2px 0 var(--eradark), 
+     2px -2px 0 var(--eradark), 
+    -2px  2px 0 var(--eradark), 
+     2px  2px 0 var(--eradark); 
+     margin-left: auto;
+     margin-right: auto;
+}
+
 
 
 @media only screen and (max-width: 930px) {
