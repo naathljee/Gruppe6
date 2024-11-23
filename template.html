@@ -76,11 +76,6 @@
                   </video>
                 </div>
               </div>
-              
-
-
-
-            
 
                <div style="height: 600px;"></div>
 
@@ -97,20 +92,13 @@
 
               <div class="XLstorycards2">
                 <div class="XLstorycardcontent2">
-                    <p></p>
+                  
+                    <img src="img/Xl/AnnEli.jpg" alt="Anne Elisabeth" class="XLstorycardcontent2hidden-img" />
+                      <p></p>
                 </div>
-               </div>
-              
-              
-              
-              
-
-              
-              <div style="height: 3500px;"></div>
-
-
-              <div style="height: 3500px;"></div> <!--midlertidig-->
-
+            </div>
+            
+              <div style="height: 2000px;"></div>
 
               <div class="xlstory-parttext">
                 <h1>Del 3</h1>
@@ -118,6 +106,8 @@
                    </div>
 
                    <div style="height: 800px;"></div>
+
+                   
     </main>
 
     
@@ -141,7 +131,7 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 24700) {
+    if (window.scrollY > 24200) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
         backgroundVideo.style.display = 'none';
     } else if (window.scrollY > 20700) {
@@ -390,25 +380,35 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//kode som bruker array for å endre tekst i intervju seksjonen av Anne elizabeth og Maylinn Dramstad
 document.addEventListener("DOMContentLoaded", function() {
     const xlstorycards2 = document.querySelector(".XLstorycards2");
     const cardContent = document.querySelector(".XLstorycardcontent2 p");
+    const imgElement = document.querySelector(".XLstorycardcontent2 img");
 
     const paragraphs = [
         "Forurensningsrådgiveren i Sarpsborg kommune Maylinn Dramstad, og miljøkrimkoordinator Anne Elisabeth er også meget bekymret.",
-        "Når båter synker, lekker de farlige kjemikalier som olje, kobber og mikroplast, forklarer Maylinn. Disse stoffene påvirker hele økosystemet. Skjell og fisk dør, og vannet blir utrygt for både bading og fiske.",
-        "Anne Elisabeth, miljøkrimkoordinator, utdyper: Fritidsbåter regnes som farlig avfall, men det finnes ingen nasjonalt båtregister. Det betyr at eiere kan dumpe båtene sine uten å bli stilt til ansvar. Resultatet er en langsom forgiftning av havet, som til slutt påvirker oss alle.",
-        "Når båtene synker, begynner en prosess som kan vare i flere tiår. Mikroplast og giftstoffer sprer seg i vannet og akkumuleres i livet i havet. Disse stoffene finner veien inn i fisken vi spiser, i skjellene vi plukker, og i verste fall i drikkevannet vårt, sier Anne Elisabeth. Konsekvensene er dyptgripende og langvarige."
+        "Når båter synker, lekker de farlige kjemikalier som olje, kobber, mikroplast og nanoplast, forklarer Maylinn. Disse stoffene påvirker hele økosystemet.<br>Skjell og fisk dør fordi nanoplast og miljøgifter ender i fisk og skjell, og vannet blir utrygt for både bading og fiske. Det forstyrrer reproduksjon, ødelegger mattryggheten og forvandler fjorden til et døende økosystem.",
+        "Anne Elisabeth, miljøkrimkoordinator, utdyper: Fritidsbåter regnes som farlig avfall, men det finnes ingen nasjonalt båtregister.<br>Det betyr at eiere kan dumpe båtene sine uten å bli stilt til ansvar. Resultatet er en langsom forgiftning av havet, som til slutt påvirker oss alle.",
+        "Når båtene synker, begynner en prosess som kan vare i flere tiår.<br>Mikroplast og giftstoffer sprer seg i vannet og akkumuleres i livet i havet. Disse stoffene finner veien inn i fisken vi spiser, i skjellene vi plukker, og i verste fall i drikkevannet vårt, sier Anne Elisabeth.<br>Konsekvensene er dyptgripende og langvarige.",
+        "Anne Elisabeth forklarer også de økonomiske konsekvensene. For små båter under 3 000 kilo finnes det en vrakpantordning, men for større båter koster det 11 000 kroner per kilo å levere dem.<br>En stor båt kan koste flere hundre tusen kroner å bli kvitt, og hvis eieren ikke kan spores, faller kostnaden på kommunen og dermed på skattebetalerne.",
+        "Selv om problemet er alvorlig, finnes det tiltak som kan gjøre en forskjell. Anne Elisabeth og Maylinn Dramstad er enige om tre nøkkeltiltak som må på plass:",
+        "Etablering av et nasjonalt båtregister: Dette vil gjøre det mulig å spore eiere og ansvarliggjøre dem for ulovlig dumping.<br>Utvidet vrakpantordning: Ordningen må inkludere større båter for å gjøre det økonomisk mulig å kvitte seg med dem på en ansvarlig måte.<br>Økt bevissthet og rapportering: Befolkningen må oppfordres til å rapportere dumpede båter til kommunene før de synker."
     ];
 
     const start = 20900;
-    const end = 22700;
-    const interval = 800;
+    const end = 23800;
+    const interval = 400;
 
     function showParagraphContent(index) {
         if (index < paragraphs.length) {
-            cardContent.textContent = paragraphs[index];
+            cardContent.innerHTML = paragraphs[index];
             xlstorycards2.style.opacity = '1';
+            if (index === 2) {
+                imgElement.style.display = 'block';
+            } else {
+                imgElement.style.display = 'none';
+            }
         }
     }
 
@@ -429,6 +429,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+
 
 
 
