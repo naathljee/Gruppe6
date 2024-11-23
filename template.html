@@ -92,6 +92,14 @@
                   <p class="XLstoryanswers"></p>
                 </div>
               </div>
+
+              <div style="height: 4000px;"></div>
+
+              <div class="XLstorycards2">
+                <div class="XLstorycardcontent2">
+                    <p></p>
+                </div>
+               </div>
               
               
               
@@ -99,6 +107,9 @@
 
               
               <div style="height: 3500px;"></div>
+
+
+              <div style="height: 3500px;"></div> <!--midlertidig-->
 
 
               <div class="xlstory-parttext">
@@ -130,10 +141,13 @@ let lastScrollTop = 0;
     const backgroundImage = document.getElementById('background-image');
     const backgroundVideo = document.getElementById('background-video');
 
-    if (window.scrollY > 20700) {
+    if (window.scrollY > 24700) {
         backgroundImage.style.backgroundImage = "url('img/XL/XLforside4.jpg')";
         backgroundVideo.style.display = 'none';
-    } else if (window.scrollY > 19400) {
+    } else if (window.scrollY > 20700) {
+        backgroundImage.style.backgroundImage = "url('img/XL/XLforside3.jpg')";
+        backgroundVideo.style.display = 'none';
+    }else if (window.scrollY > 19400) {
         backgroundImage.style.backgroundImage = "url('img/XL/bjorn2.jpg')";
         backgroundImage.style.backgroundPosition = "center left"; 
         backgroundImage.style.backgroundSize = "cover"; 
@@ -375,6 +389,46 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const xlstorycards2 = document.querySelector(".XLstorycards2");
+    const cardContent = document.querySelector(".XLstorycardcontent2 p");
+
+    const paragraphs = [
+        "Forurensningsrådgiveren i Sarpsborg kommune Maylinn Dramstad, og miljøkrimkoordinator Anne Elisabeth er også meget bekymret.",
+        "Når båter synker, lekker de farlige kjemikalier som olje, kobber og mikroplast, forklarer Maylinn. Disse stoffene påvirker hele økosystemet. Skjell og fisk dør, og vannet blir utrygt for både bading og fiske.",
+        "Anne Elisabeth, miljøkrimkoordinator, utdyper: Fritidsbåter regnes som farlig avfall, men det finnes ingen nasjonalt båtregister. Det betyr at eiere kan dumpe båtene sine uten å bli stilt til ansvar. Resultatet er en langsom forgiftning av havet, som til slutt påvirker oss alle.",
+        "Når båtene synker, begynner en prosess som kan vare i flere tiår. Mikroplast og giftstoffer sprer seg i vannet og akkumuleres i livet i havet. Disse stoffene finner veien inn i fisken vi spiser, i skjellene vi plukker, og i verste fall i drikkevannet vårt, sier Anne Elisabeth. Konsekvensene er dyptgripende og langvarige."
+    ];
+
+    const start = 20900;
+    const end = 22700;
+    const interval = 800;
+
+    function showParagraphContent(index) {
+        if (index < paragraphs.length) {
+            cardContent.textContent = paragraphs[index];
+            xlstorycards2.style.opacity = '1';
+        }
+    }
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY >= start && scrollY < end) {
+            xlstorycards2.style.display = 'block';
+            xlstorycards2.style.opacity = '1';
+
+            const index = Math.floor((scrollY - start) / interval);
+            showParagraphContent(index);
+        } else {
+            xlstorycards2.style.opacity = '0';
+            setTimeout(() => {
+                xlstorycards2.style.display = 'none';
+            }, 500);
+        }
+    });
+});
 
 
 
