@@ -48,11 +48,41 @@
             <p id="story3starttext">I løpet av tre måneders perioden har det, med estimatene som grunnlag, blitt sluppet ut en enorm mengde kloakk.  </p>
         </div>
 
+        <div style="height: 1800px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Dersom det ble sluppet ut det maksimale estimatet under hele perioden blir grafene sånn her.</p>
+        </div>
 
 
         <div id="story3graph" class="story3graph" style="width:100%;max-width:700px;position: fixed;"></div>
         <div id="story3graph2" class="story3graph2" style="width:100%;max-width:700px;position: fixed;"></div>
-        
+
+        <div style="height: 1800px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Likevel godkjente Statsforvalteren dette utslippet med begrunnelsen om at det nye renseanlegget vil veie opp for utslippene i fremtiden.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Dette er en alvorlig belastning for miljøet, og utslippene vil føre til forverret vannkvalitet i Glomma. Ubehandlet kloakk inneholder både næringsstoffer som kan føre til algevekst og oksygenmangel i vannet, samt mikroorganismer som kan utgjøre en helsefare for både mennesker og dyr.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Ikke bare er dette en alvorlig belastning for miljøet, men det er ironisk at det samme året som regjeringen innførte et forbud mot at fritidsbåter kan tømme septik i Oslofjorden, godkjenner Statsforvalteren at Sarpsborg kommune skal få dumpe så enorme mengder kloakk i Glomma.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">For Sarpsborg er dette en stor miljøutfordring, og en påminnelse om sårbarheten i eldre avløpssystemer. Kommunen har varslet at de jobber for å finne løsninger på kort sikt, samtidig som de har satt i gang tiltak for å få ferdigstilt det nye renseanlegget så raskt som mulig.</p>
+        </div>
+
+
         <div style="height: 8000px;"></div>
     </main>
     <script>
@@ -96,7 +126,13 @@
         backgroundImage.classList.remove('background-slide');
         backgroundImage.style.backgroundImage = "url('img/placeholder-image-background-dark.png')";
     }
+
+    if (window.scrollY > 13500) {
+        backgroundImage.classList.add('fade-background');
+        backgroundImage.style.backgroundImage = "url('img/placeholder-image-background-dark.png')";
+    }
 });
+
 
 
 
@@ -173,8 +209,8 @@
 
             const start1 = 5500;  // Start animasjon for første graf
             const end1 = 6500;    // End animasjon for første graf
-            const start2 = 6500;  // Start animasjon for andre graf
-            const end2 = 7500;    // End animasjon for andre graf
+            const start2 = 7500;  // Start animasjon for andre graf
+            const end2 = 8500;    // End animasjon for andre graf
 
             // Script for å gjøre grafene fixed mellom start og end scrolling, med fade effekt
             window.addEventListener('scroll', function() {
