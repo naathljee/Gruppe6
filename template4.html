@@ -15,23 +15,8 @@
         <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logoHistorieLiten2-img"></a>
     </header>
     <main class="HistorieLiten3-main">
-        
-        
-        
-        
-        
         <div id="story3graph" class="story3graph" style="width:100%;max-width:700px"></div>
-      
-      
-      
-      
         <div style="height: 8000px;"></div>
-
-
-
-
-
-
     </main>
     <script>
         //Gjør så ERA logoen forsvinner etter 35 pixler scroling
@@ -59,15 +44,21 @@
             y: yArray,
             type: "bar",
             orientation: "h",
-            marker: { color: "rgba(255,0,0,0.6)" }
+            marker: { color: "rgba(221,221,221,1)" }
         }];
 
         const layout = {
             title: "Kloakkutslipp i liter",
-            paper_bgcolor: "#ddd",
+            titlefont: { color: "#ddd" },
+            paper_bgcolor: "#282828", //Eralight
             plot_bgcolor: "rgba(0,0,0,0)",
-            xaxis: { showgrid: false, title: "Liter" },
-            yaxis: { showgrid: false }
+            xaxis: { 
+                showgrid: false, 
+                title: "Liter <br> B = milliarder", 
+                titlefont: { color: "#ddd" }, 
+                tickfont: { color: "#ddd" }, 
+            },
+            yaxis: { showgrid: false, tickfont: { color: "#ddd" } }
         };
 
         Plotly.newPlot("story3graph", data, layout, config);
