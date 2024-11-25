@@ -764,25 +764,34 @@ justify-content: center;
     background-image: url('img/placeholder-image-background-dark.png');
 }
 
+  
 .HistorieLiten3-tittel {
-    position: fixed;
-    z-index: 1;
-    color: var(--eralight);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 82vh;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
     width: 100%;
-    text-align: center;
-    font-size: medium;
-    max-width: 850px;
+    position: fixed; 
+    top: 0;
+    transform: translateY(0); 
+    transition: transform 0.5s ease-in-out; 
 }
+
+
+.HistorieLiten3-tittelh1 {
+    font-size: xx-large;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center; 
+    color: var(--eralight);
+}
+
+
 
 .HistorieLiten3-starttext {
     position: relative;
-    z-index: 1;
-    color: var(--eralight);
+    z-index: 2;
+    color: var(--eradark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -791,7 +800,7 @@ justify-content: center;
     width: 100%;
     text-align: center;
     font-size: x-large;
-    max-width: 850px;
+    max-width: 650px;
 }
 
 #story3starttext {
@@ -822,6 +831,46 @@ justify-content: center;
     transition: opacity 0.5s;  
     position: fixed;
 }
+
+
+@keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .background-slide {
+    position: relative;
+    animation: slideUp 0.5s forwards;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  @keyframes titleSlideUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.title-slide-up {
+    animation: titleSlideUp 0.5s forwards;
+}
+
+
+
+
+
+
+
 @media only screen and (max-width: 650px) {
    
 
