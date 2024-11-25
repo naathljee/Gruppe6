@@ -739,10 +739,14 @@ justify-content: center;
 }
 
 .logoHistorieLiten3-img {
-    max-width: 20%;
+    min-width: 50px;
+    max-width: 10%;
     height: auto;
     display: block;
+    z-index: 2000;
+    position: relative; /* Legg til dette */
 }
+
 
 .HistorieLiten3-main {
     display: flex;
