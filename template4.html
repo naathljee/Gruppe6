@@ -9,85 +9,174 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </head>
 <body class="container-HistorieLiten3">
     <header class="head-HistorieLiten2">
         <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logoHistorieLiten2-img"></a>
     </header>
     <main class="HistorieLiten3-main">
-        <div id="story3graph" class="story3graph" style="width:100%;max-width:700px"></div>
+        <div class="HistorieLiten3-tittel">
+            <h1>Tre måneder med kloakkutslipp i Glomma går mot slutten</h1>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Siden september har Sarpsborg kommune vært nødt til å slippe ut store mengder ubehandlet kloakk i Glomma. Ifølge estimatene kan så mye som 3 millioner tonn kloakk ha gått direkte ut i Norges største elv.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">I kommunens søknad til Statsforvalteren ble det anslått et utslipp på 184–620 liter per sekund opplyser Sarpsborg Arbeiderblad. Gjennomsnittet av dette estimatet er omtrent 402 liter i sekundet.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">Utslippet skjer som følge av utfordringer med det nye renseanlegget på Alvim som forventes å ferdigstilles i 2027. Det er riktig nok ikke første gang Sarpsborg kommune har sluppet kloakk direkte ut i Glomma og ned til nabobyen Fredrikstad. Det skjedde også i 2012 og 2016.</p>
+        </div>
+
+        <div style="height: 500px;"></div>
+
+        <div class="HistorieLiten3-starttext">
+            <p id="story3starttext">I løpet av tre måneders perioden har det, med estimatene som grunnlag, blitt sluppet ut en enorm mengde kloakk.  </p>
+        </div>
+
+
+
+        <div id="story3graph" class="story3graph" style="width:100%;max-width:700px;position: fixed;"></div>
+        <div id="story3graph2" class="story3graph2" style="width:100%;max-width:700px;position: fixed;"></div>
+        
         <div style="height: 8000px;"></div>
     </main>
     <script>
-        //Gjør så ERA logoen forsvinner etter 35 pixler scroling
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function() {
-            let header = document.querySelector('.head-HistorieLiten2');
-            let st = window.pageYOffset || document.documentElement.scrollTop;
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gjør så ERA logoen forsvinner etter 35 piksler scrolling
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                let header = document.querySelector('.head-HistorieLiten2');
+                let st = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (st > 15) {
-                header.classList.add('hide-header');
-            } else {
-                header.classList.remove('hide-header');
-            }
+                if (st > 15) {
+                    header.classList.add('hide-header');
+                } else {
+                    header.classList.remove('hide-header');
+                }
 
-            lastScrollTop = st <= 0 ? 0 : st;
-        });
+                lastScrollTop = st <= 0 ? 0 : st;
+            });
 
-        //Script som viser graf
-        const xArray = [1447200, 34732800, 1041984000, 3125952000];
-        const yArray = ["Per time", "Per døgn", "Per måned ", "For tre måneder"];
-        const config = { responsive: true, staticPlot: true };
 
-        const data = [{
-            x: xArray,
-            y: yArray,
-            type: "bar",
-            orientation: "h",
-            marker: { color: "rgba(221,221,221,1)" }
-        }];
 
-        const layout = {
-            title: "Kloakkutslipp i liter",
-            titlefont: { color: "#ddd" },
-            paper_bgcolor: "#282828", //Eralight
-            plot_bgcolor: "rgba(0,0,0,0)",
-            xaxis: { 
-                showgrid: false, 
-                title: "Liter <br> B = milliarder", 
-                titlefont: { color: "#ddd" }, 
-                tickfont: { color: "#ddd" }, 
-            },
-            yaxis: { showgrid: false, tickfont: { color: "#ddd" } }
-        };
+  
 
-        Plotly.newPlot("story3graph", data, layout, config);
 
-        // Setter initial opacity til 0
-        window.addEventListener('load', function() {
-            const graph = document.getElementById('story3graph');
-            graph.style.opacity = '0';
-        });
 
-        const start = 3000;  // Start animasjon
-        const end = 4000;    // End animasjon
 
-        // Script for å gjøre grafen fixed mellom start og end scrolling, med fade effekt
-        window.addEventListener('scroll', function() {
-            const graph = document.getElementById('story3graph');
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (scrollTop >= start && scrollTop <= end) {
-                graph.style.position = 'fixed';
-                graph.style.top = '10px';  
-                graph.style.opacity = '1';  
-                graph.style.transition = 'opacity 0.5s';  
-            } else {
-                graph.style.position = 'relative';
-                graph.style.top = '0px';
-                graph.style.opacity = '0';  
-                graph.style.transition = 'opacity 0.5s';  
-            }
+            // Script som viser den første grafen
+            const xArray1 = [1447200, 34732800, 1041984000, 3125952000];
+            const yArray1 = ["Per time", "Per døgn", "Per måned", "For tre måneder"];
+            const config1 = { responsive: true, staticPlot: true };
+
+            const data1 = [{
+                x: xArray1,
+                y: yArray1,
+                type: "bar",
+                orientation: "h",
+                marker: { color: "rgba(221,221,221,1)" }
+            }];
+
+            const layout1 = {
+                title: "Her er en graf som viser omfanget av kloakkutslipp (Gjennomsnitt)",
+                titlefont: { color: "#ddd" },
+                paper_bgcolor: "#282828",
+                plot_bgcolor: "rgba(0,0,0,0)",
+                xaxis: { 
+                    showgrid: false, 
+                    title: "Liter <br> B = milliarder", 
+                    titlefont: { color: "#ddd" }, 
+                    tickfont: { color: "#ddd" }, 
+                },
+                yaxis: { showgrid: false, tickfont: { color: "#ddd" } }
+            };
+
+            Plotly.newPlot("story3graph", data1, layout1, config1);
+
+            // Script som viser den andre grafen
+            const xArray2 = [37200, 2232000, 53568000, 1607040000, 4821120000];
+            const yArray2 = ["Per minutt", "Per time", "Per døgn", "Per måned", "For tre måneder"];
+            const config2 = { responsive: true, staticPlot: true };
+
+            const data2 = [{
+                x: xArray2,
+                y: yArray2,
+                type: "bar",
+                orientation: "h",
+                marker: { color: "rgba(221,221,221,1)" }
+            }];
+
+            const layout2 = {
+                title: "Her er en graf som viser omfanget av kloakkutslipp (Maksimalt)",
+                titlefont: { color: "#ddd" },
+                paper_bgcolor: "#282828",
+                plot_bgcolor: "rgba(0,0,0,0)",
+                xaxis: { 
+                    showgrid: false, 
+                    title: "Liter <br> B = milliarder", 
+                    titlefont: { color: "#ddd" }, 
+                    tickfont: { color: "#ddd" }, 
+                },
+                yaxis: { showgrid: false, tickfont: { color: "#ddd" } }
+            };
+
+            Plotly.newPlot("story3graph2", data2, layout2, config2);
+
+            // Setter initial opacity til 0
+            window.addEventListener('load', function() {
+                const graphs = document.querySelectorAll('.story3graph, .story3graph2');
+                graphs.forEach(graph => {
+                    graph.style.opacity = '0';
+                });
+            });
+
+            const start1 = 5500;  // Start animasjon for første graf
+            const end1 = 6500;    // End animasjon for første graf
+            const start2 = 6500;  // Start animasjon for andre graf
+            const end2 = 7500;    // End animasjon for andre graf
+
+            // Script for å gjøre grafene fixed mellom start og end scrolling, med fade effekt
+            window.addEventListener('scroll', function() {
+                const graph1 = document.getElementById('story3graph');
+                const graph2 = document.getElementById('story3graph2');
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop >= start1 && scrollTop <= end1) {
+                   
+                    graph1.style.top = '10px';  
+                    graph1.style.opacity = '1';  
+                    graph1.style.transition = 'opacity 0.5s';  
+                } else {
+                  
+                    graph1.style.top = '0px';
+                    graph1.style.opacity = '0';  
+                    graph1.style.transition = 'opacity 0.5s';  
+                }
+
+                if (scrollTop >= start2 && scrollTop <= end2) {
+                   
+                    graph2.style.top = '10px';  
+                    graph2.style.opacity = '1';  
+                    graph2.style.transition = 'opacity 0.5s';  
+                } else {
+                   
+                    graph2.style.top = '0px';
+                    graph2.style.opacity = '0';  
+                    graph2.style.transition = 'opacity 0.5s';  
+                }
+            });
         });
     </script>
 </body>

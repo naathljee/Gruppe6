@@ -717,7 +717,7 @@ justify-content: center;
 /*story 3 side*/
 
 .container-HistorieLiten3 {
-    max-width: 800px; 
+    max-width: 850px; 
     min-width: 130px;
     margin: 0 auto; 
     padding: 20px;
@@ -745,12 +745,47 @@ justify-content: center;
 }
 
 .HistorieLiten3-main {
-    padding: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px 0;
 }
+
+.HistorieLiten3-tittel {
+    position: relative;
+    z-index: 1;
+    color: var(--eralight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+    max-width: 850px;
+}
+
+.HistorieLiten3-starttext {
+    position: relative;
+    z-index: 1;
+    color: var(--eralight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    max-width: 850px;
+}
+
+#story3starttext {
+    
+}
+
 
 .story3graph {
     width: 100%;
@@ -764,6 +799,17 @@ justify-content: center;
     position: fixed;
 }
 
+.story3graph2 {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 150px;
+    z-index: 999;  
+    opacity: 0;  
+    transition: opacity 0.5s;  
+    position: fixed;
+}
 @media only screen and (max-width: 650px) {
    
 
