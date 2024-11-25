@@ -717,7 +717,6 @@ justify-content: center;
 /*story 3 side*/
 
 .container-HistorieLiten3 {
-    width: 100%;
     max-width: 800px; 
     min-width: 130px;
     margin: 0 auto; 
@@ -725,14 +724,13 @@ justify-content: center;
     font-family: "SUSE", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: var(--eradark);
+    background-color: var(--eralight);
     background-image: url('img/placeholder-image-background-dark.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: var(--eralight);
 }
-
 
 .head-HistorieLiten3 { 
     border-bottom: 4px solid var(--eralight);
@@ -746,54 +744,32 @@ justify-content: center;
     display: block;
 }
 
-
 .HistorieLiten3-main {
     padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/*Dark Mode*/
-
-.dark-mode.container-HistorieLiten3 {
-    color: var(--eradark);
-    background-color: var(--eralight);
-}
-
-.dark-mode.head-HistorieLiten3 { 
-    border-bottom: 4px solid var(--eradark);
- 
-}
-
-
-#darkModeToggle {
+.story3graph {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 150px;
+    z-index: 999;  
+    opacity: 0;  
+    transition: opacity 0.5s;  
     position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    cursor: pointer;
-    width: 8vw;
-    height: 8vw; 
-    background-color: transparent;
-    background-image: url('img/darkmode-button.png');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center;
-    border: none; 
-    z-index: 10;
 }
 
-@media only screen and (min-width: 1000px) {
-    #darkModeToggle {
-        width: 80px;
-        height: 80px; 
-    }
+@media only screen and (max-width: 650px) {
+   
+
+    
 }
 
-@media only screen and (max-width: 725px) {
-    #darkModeToggle {
-        width: 57px;
-        height: 57px; 
-    }
-}
 
 
 
