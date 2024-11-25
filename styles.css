@@ -649,6 +649,19 @@ justify-content: center;
     z-index: 1;
 }
 
+#sourceText-story2 { 
+    position: fixed; 
+    bottom: 0; 
+    right: 0; 
+    width: auto; 
+    text-align: right; 
+    display: none; 
+    z-index: 3000;
+    padding: 10px; /* Legger til litt polstring for å få det til å se bedre ut */
+}
+
+
+
 
 
 /* Dark Mode */

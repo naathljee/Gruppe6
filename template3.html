@@ -35,6 +35,7 @@
         <div class="HistorieLiten2-endtext">
             <p> Som vi sier i Halden: <br> Det er ikke så nøye med fasiten. Det som er viktig er å holde liv i kongens død, konkluderer Rannestad.</p>
         </div>
+        <div id="sourceText-story2">Google Satelittbilde</div>
         <div style="height: 100px;"></div>
     </main>
     <script>
@@ -148,8 +149,19 @@ window.addEventListener('scroll', () => {
 
 updateContent(0);
 
+
+//Kilde tekst som viser hvor kartet kom fra
+window.addEventListener('scroll', function() {
+    const fixedText = document.getElementById('sourceText-story2');
+    const scrollY = window.scrollY;
+
+    if (scrollY < 500 || (scrollY >= 2000 && scrollY < 11000)) {
+        fixedText.style.display = 'block';
+    } else {
+        fixedText.style.display = 'none';
+    }
+});
+
     </script>
 </body>
 </html>
-
-
