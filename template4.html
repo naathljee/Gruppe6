@@ -16,6 +16,10 @@
         <a href="index.html"><img src="img/ERA.png" alt="ERA logo" class="logoHistorieLiten2-img"></a>
     </header>
     <main class="HistorieLiten3-main">
+
+        <div id="story3background"></div>
+
+
         <div class="HistorieLiten3-tittel">
             <h1>Tre måneder med kloakkutslipp i Glomma går mot slutten</h1>
         </div>
@@ -70,8 +74,15 @@
 
 
 
-  
+        window.addEventListener('scroll', function () {
+            const backgroundImage = document.getElementById('story3background');
 
+            if (window.scrollY > 350) {
+                backgroundImage.style.backgroundImage = "url('img/XL/XLforside2.jpg')";
+            } else {
+                backgroundImage.style.backgroundImage = "url('img/XL/XLforside.jpg')";
+            }
+        });
 
 
 
