@@ -26,7 +26,7 @@
             <div class="image-container" id="image-container"></div>
             <div class="text" id="text">
                 <p id="carousel-text"></p>
-                <img id="specialImage" src="img/maps-story-bilde2.png" alt="Bilde av kuler og hodeskalle" style="display: none;">
+                <img id="carouselimage" src="img/maps-story-bilde2.png" alt="Bilde av kuler og hodeskalle" style="display: none;">
             </div>
 
         </div>
@@ -69,7 +69,7 @@
         const imageContainer = document.getElementById('image-container');
         const carouselText = document.getElementById('carousel-text');
         const text = document.getElementById('text');
-        const specialImage = document.getElementById('specialImage');
+        const carouselimage = document.getElementById('carouselimage');
         const texts = [
             'Fredriksten festning',
             '-Stutekollen: Karl XII dro svære kanoner opp på Stutekollen og bombarderte Gyldenløve fort i tre dager. Fortet ble knust og ved å bygge løpegraver klarte svenskene å storme fremover. Ifølge kommandant oberstløytnant Magne Rannestad ved Fredriksten festning var det på den lille høyden angrepet startet i 1718.',
@@ -117,16 +117,16 @@
         text.classList.add('show');
         imageContainer.style.opacity = '1';
 
-        // Se om index 3 vises, hvis så, endre display none til display block på "specialimage" 
+        // Se om index 3 vises, hvis så, endre display none til display block på "carouselimage" 
         if (index === 3) {
-            specialImage.style.display = 'block';
+            carouselimage.style.display = 'block';
         } else {
-            specialImage.style.display = 'none';
+            carouselimage.style.display = 'none';
         }
     } else {
         imageContainer.style.opacity = '0';
         text.classList.remove('show');
-        specialImage.style.display = 'none';
+        carouselimage.style.display = 'none';
         setTimeout(() => {
             if (window.scrollY <= 2000 || window.scrollY >= 11000) {
                 imageContainer.style.visibility = 'hidden';

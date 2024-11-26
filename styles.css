@@ -656,7 +656,7 @@ audio {
 
 }
 
-#specialImage {
+#carouselimage {
     max-width: 100%;
     height: auto;
     display: none;
@@ -752,7 +752,7 @@ audio {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--eradark);
-    background-image: url('img/placeholder-image-background-dark.png');
+    background-image: url('img/graf-story-bilde1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -792,7 +792,7 @@ audio {
     background-size: cover; 
     background-position: center;
     z-index: -1;
-    background-image: url('img/placeholder-image-background-dark.png');
+    background-image: url('img/graf-story-bilde1.jpg');
 }
 
   
@@ -815,6 +815,11 @@ audio {
     margin: 0 auto;
     text-align: center; 
     color: var(--eralight);
+    text-shadow: 
+    -1px -2px 0 var(--eradark), 
+     1px -2px 0 var(--eradark), 
+    -1px  2px 0 var(--eradark), 
+     1px  2px 0 var(--eradark); 
 }
 
 
@@ -832,6 +837,26 @@ audio {
     text-align: center;
     font-size: x-large;
     max-width: 650px;
+}
+
+.HistorieLiten3-lasttext {
+    position: relative;
+    z-index: 2;
+    color: var(--eralight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 82vh;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+    max-width: 650px;
+    text-shadow: 
+    -1px -1px 0 var(--eradark), 
+     1px -1px 0 var(--eradark), 
+    -1px  1px 0 var(--eradark), 
+     1px  1px 0 var(--eradark); 
 }
 
 
