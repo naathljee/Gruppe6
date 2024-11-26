@@ -752,7 +752,7 @@ audio {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: var(--eradark);
-    background-image: url('img/graf-story-bilde1.jpg');
+    background-image: url('img/graf-story-bilde2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -792,7 +792,7 @@ audio {
     background-size: cover; 
     background-position: center;
     z-index: -1;
-    background-image: url('img/graf-story-bilde1.jpg');
+    background-image: url('img/graf-story-bilde2.jpg');
 }
 
   
